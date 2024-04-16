@@ -1,0 +1,4 @@
+res://scenes/PlayerController.gd
+res://scenes/global_info.tscn
+res://global_info.gd
+res://scenes/player.tscn
