@@ -25,11 +25,11 @@ func _process(delta):
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.play()
+		$PlayerSprite.animation = "walk"
+		$PlayerSprite.play()
 	else:
-		$AnimatedSprite2D.animation = "stop"
-		$AnimatedSprite2D.stop()
+		$PlayerSprite.animation = "stop"
+		$PlayerSprite.stop()
 	
 	position += velocity * delta
 	#position = position.clamp(Vector2.ZERO, screenSize)

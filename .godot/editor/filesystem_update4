@@ -1,7 +1,10 @@
+res://scenes/baseItem.tscn
 res://scenes/player.tscn
-res://scenes/devScene.tscn
 res://scenes/global_info.tscn
-res://scenes/scripts/healthSystem.gd
-res://scenes/scripts/global_info.gd
+res://scenes/dev_scene.tscn
 res://scenes/scripts/PlayerController.gd
 res://scenes/scripts/player.gd
+res://scenes/base_entity.tscn
+res://scenes/scripts/baseEntity.gd
+res://scenes/scripts/base_entity.gd
+res://scenes/scripts/base_entity_area2d.gd
