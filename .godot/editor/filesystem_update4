@@ -1,4 +1,7 @@
-res://scenes/PlayerController.gd
-res://scenes/global_info.tscn
-res://global_info.gd
 res://scenes/player.tscn
+res://scenes/devScene.tscn
+res://scenes/global_info.tscn
+res://scenes/scripts/healthSystem.gd
+res://scenes/scripts/global_info.gd
+res://scenes/scripts/PlayerController.gd
+res://scenes/scripts/player.gd

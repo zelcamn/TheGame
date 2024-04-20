@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="TheGame"
-run/main_scene="res://scenes/player.tscn"
+run/main_scene="res://scenes/devScene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalInfo="*res://global_info.gd"
+GlobalInfo="*res://scenes/scripts/global_info.gd"
 
 [input]
 
