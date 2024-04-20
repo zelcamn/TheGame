@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://br0mek24tjxjd"]
+[gd_scene load_steps=7 format=3 uid="uid://br0mek24tjxjd"]
 
 [ext_resource type="Script" path="res://scenes/scripts/PlayerController.gd" id="1_rd8md"]
+[ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_wy2c8"]
 [ext_resource type="Texture2D" uid="uid://cnu5xd4xao0j6" path="res://res/sprites/player/stop.png" id="2_dcasc"]
 [ext_resource type="Texture2D" uid="uid://dkn3j0ayhrobw" path="res://res/sprites/player/walk.png" id="3_8tsmi"]
 
@@ -37,6 +38,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm14j"]
 
 [node name="Player" type="Node2D"]
+script = ExtResource("1_wy2c8")
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]

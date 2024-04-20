@@ -2,10 +2,13 @@ extends Area2D
 
 var speed = GlobalInfo.playerSpeed
 var screenSize
-
+var health = Health.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screenSize = get_viewport_rect().size
+	
+	health.maxHealth = GlobalInfo.playerHealth
+	health.health = GlobalInfo.playerHealth
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,4 +32,4 @@ func _process(delta):
 		$AnimatedSprite2D.stop()
 	
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screenSize)
+	#position = position.clamp(Vector2.ZERO, screenSize)

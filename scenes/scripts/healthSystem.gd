@@ -2,7 +2,7 @@ extends Object
 
 class_name Health
 
-signal ChangedHP
+signal changedHP
 
 var minHealth: int = 0:
 	set(newMinHealth):
