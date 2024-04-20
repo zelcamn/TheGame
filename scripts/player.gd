@@ -5,3 +5,4 @@ var health = Health.new()
 func _ready():
 	health.maxHealth = GlobalInfo.playerHealth
 	health.health = GlobalInfo.playerHealth
+	

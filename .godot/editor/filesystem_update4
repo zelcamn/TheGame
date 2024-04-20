@@ -1,3 +1,11 @@
-res://scenes/player.tscn
+res://scenes/world.tscn
+res://scripts/global_info.gd
+res://scripts/player_controller.gd
+res://scenes/heart.tscn
+res://scenes/sword.tscn
+res://scenes/attack_component.tscn
 res://scenes/global_info.tscn
-res://scenes/devScene.tscn
+res://scenes/player.tscn
+res://scripts/player.gd
+res://scripts/attack_component.gd
+res://scripts/heart.gd

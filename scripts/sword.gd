@@ -7,7 +7,7 @@ var direction: Vector2 = Vector2.RIGHT
 var BlockMove = 1
 
 func _process(delta):
-	position += direction * speed * delta * BlockMove
+	position += direction * speed * delta * BlockMove 
 	PressAttack()
 
 

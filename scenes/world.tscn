@@ -5,6 +5,8 @@
 
 [node name="World" type="Node2D"]
 
-[node name="sword" parent="." instance=ExtResource("1_y1cma")]
-
 [node name="heart" parent="." instance=ExtResource("2_ryy8r")]
+position = Vector2(650, 350)
+
+[node name="sword" parent="." instance=ExtResource("1_y1cma")]
+position = Vector2(0, 320)

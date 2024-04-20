@@ -1,18 +1,19 @@
 extends Node
 
-class_name HealthComponent
+class_name attack_component
 
-@export var attack_damage := 5.0
-@export var MAX_HEALTH := 10.0 #передача макс хп при вызове сцены
-var health : float
+
+var attack_damage = GlobalInfo.playerBaseDamage
+#@export var MAX_HEALTH := 10.0 #передача макс хп при вызове сцены
+#var MAX_HEALTH = Health
+#var health : float
 
 #Подгрузка хп при первом вызове
-func _ready():
-	health = MAX_HEALTH
+#func _ready():
+	#health = MAX_HEALTH
 	
 
-func damage():
+func damage(health):
 	health -= attack_damage #берётся из параметров оружия
-	print(health)
 	if health <= 0:
 		get_parent().queue_free() #удаление сцены с экрана (скорее всего придётся заменить)
