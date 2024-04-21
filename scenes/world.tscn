@@ -1,12 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctvgk488286rm"]
 
-[ext_resource type="PackedScene" uid="uid://bjw6ghg7bnmdb" path="res://scenes/sword.tscn" id="1_y1cma"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_3rsvo"]
 [ext_resource type="PackedScene" uid="uid://b7ae82kihyk5w" path="res://scenes/heart.tscn" id="2_ryy8r"]
 
-[node name="World" type="Node2D"]
+[node name="core_attack_patern" type="Node2D"]
+script = ExtResource("1_3rsvo")
 
 [node name="heart" parent="." instance=ExtResource("2_ryy8r")]
-position = Vector2(650, 350)
-
-[node name="sword" parent="." instance=ExtResource("1_y1cma")]
-position = Vector2(0, 320)
+position = Vector2(662, 354)

@@ -1,19 +1,14 @@
 extends Node
 
+#цепляется к сцене моба
 class_name attack_component
 
 
-var attack_damage = GlobalInfo.playerBaseDamage
-#@export var MAX_HEALTH := 10.0 #передача макс хп при вызове сцены
-#var MAX_HEALTH = Health
-#var health : float
+#var attack_damage = GlobalInfo.playerBaseDamage #временно установлен базовый урон
 
-#Подгрузка хп при первом вызове
-#func _ready():
-	#health = MAX_HEALTH
-	
-
-func damage(health):
+func damage(health,attack_damage):
 	health -= attack_damage #берётся из параметров оружия
+	#print(health)
 	if health <= 0:
 		get_parent().queue_free() #удаление сцены с экрана (скорее всего придётся заменить)
+	return health
