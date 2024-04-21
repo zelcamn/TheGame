@@ -1,0 +1,2 @@
+baseEffect
+Consumable

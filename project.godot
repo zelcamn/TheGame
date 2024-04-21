@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="TheGame"
-run/main_scene="res://scenes/dev_scene.tscn"
+run/main_scene="res://gameFiles/scenes/dev_scene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalInfo="*res://scenes/scripts/global_info.gd"
+GlobalInfo="*res://gameFiles/scenes/scripts/global_info.gd"
+EventBus="*res://gameFiles/globals/event_bus.gd"
 
 [input]
 

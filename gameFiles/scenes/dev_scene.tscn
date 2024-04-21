@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhgj4dpn7bvug"]
+
+[ext_resource type="PackedScene" uid="uid://br0mek24tjxjd" path="res://gameFiles/scenes/player.tscn" id="1_cbxf1"]
+[ext_resource type="PackedScene" uid="uid://1r63h0pkciim" path="res://gameFiles/scenes/base_entity.tscn" id="2_yga1o"]
+
+[node name="DevScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_cbxf1")]
+position = Vector2(292, 170)
+
+[node name="base_entity" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(89, 181)
+testM = "1"
+
+[node name="base_entity2" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(551, 186)
+testM = "2"

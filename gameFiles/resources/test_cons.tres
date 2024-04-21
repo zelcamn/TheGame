@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="baseEffect" load_steps=2 format=3 uid="uid://df04j436nhyp1"]
+
+[ext_resource type="Script" path="res://gameFiles/scripts/customResources/consumablesEffects/base_effect.gd" id="1_7ibgn"]
+
+[resource]
+script = ExtResource("1_7ibgn")
+name = ""
