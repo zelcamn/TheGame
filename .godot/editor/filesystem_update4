@@ -19,3 +19,9 @@ res://gameFiles/globals/event_bus.gd
 res://gameFiles/scenes/scripts/player.gd
 res://gameFiles/globals/global_info.tscn
 res://gameFiles/scenes/scripts/broke1.gd
+res://gameFiles/scripts/customResources/weapon.gd
+res://gameFiles/resources/test_weapon.tres
+res://gameFiles/scripts/customResources/item.gd
+res://gameFiles/scripts/inventory.gd
+res://gameFiles/resources/test_cons.tres
+res://gameFiles/resources/test_cons2.tres

@@ -1,2 +1,4 @@
-baseEffect
 Consumable
+Resource
+Weapon
+baseEffect

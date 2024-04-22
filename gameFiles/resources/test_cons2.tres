@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=2 format=3 uid="uid://di2s5e4u4wb87"]
+
+[ext_resource type="Script" path="res://gameFiles/scripts/customResources/consumable.gd" id="1_fxjiu"]
+
+[resource]
+script = ExtResource("1_fxjiu")
+name = "test2"
