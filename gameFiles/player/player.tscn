@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://br0mek24tjxjd"]
 
-[ext_resource type="Script" path="res://gameFiles/scenes/scripts/PlayerController.gd" id="1_rd8md"]
-[ext_resource type="Script" path="res://gameFiles/scenes/scripts/player.gd" id="1_wy2c8"]
+[ext_resource type="Script" path="res://gameFiles/player/PlayerController.gd" id="1_rd8md"]
 [ext_resource type="Texture2D" uid="uid://cnu5xd4xao0j6" path="res://res/sprites/player/stop.png" id="2_dcasc"]
 [ext_resource type="Texture2D" uid="uid://dkn3j0ayhrobw" path="res://res/sprites/player/walk.png" id="3_8tsmi"]
+[ext_resource type="PackedScene" uid="uid://cpl7grpuid6sp" path="res://gameFiles/inventory/inventory_UI.tscn" id="5_pgo2r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_811fi"]
 animations = [{
@@ -46,27 +46,27 @@ script/source = "extends Area2D
 [sub_resource type="CircleShape2D" id="CircleShape2D_4w2lg"]
 radius = 38.3275
 
-[node name="Player" type="Node2D"]
-script = ExtResource("1_wy2c8")
-metadata/_edit_group_ = true
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_rd8md")
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="Area2D"]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_811fi")
 animation = &"stop"
 
-[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+[node name="Collision" type="CollisionShape2D" parent="."]
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_jm14j")
 
-[node name="EntityCollision" type="Area2D" parent="Area2D"]
+[node name="EntityCollision" type="Area2D" parent="."]
 collision_mask = 2
 script = SubResource("GDScript_rjaet")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/EntityCollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntityCollision"]
 shape = SubResource("CircleShape2D_4w2lg")
 
-[connection signal="body_entered" from="Area2D/EntityCollision" to="." method="_on_entity_collision_body_entered"]
-[connection signal="body_exited" from="Area2D/EntityCollision" to="." method="_on_entity_collision_body_exited"]
+[node name="inventory_UI" parent="." instance=ExtResource("5_pgo2r")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

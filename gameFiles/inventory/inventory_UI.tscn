@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpl7grpuid6sp"]
+
+[ext_resource type="Script" path="res://gameFiles/inventory/inventory_UI.gd" id="1_tfyx5"]
+[ext_resource type="Texture2D" uid="uid://cnu5xd4xao0j6" path="res://res/sprites/player/stop.png" id="2_mqe0x"]
+[ext_resource type="PackedScene" uid="uid://diewxfpwnuyaq" path="res://gameFiles/inventory/item_ui.tscn" id="3_nuxkr"]
+
+[node name="inventory_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfyx5")
+item_UI_scene = ExtResource("3_nuxkr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -148.5
+offset_right = 207.0
+offset_bottom = 148.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mqe0x")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4

@@ -3,12 +3,17 @@ extends Area2D
 var speed = GlobalInfo.playerSpeed
 var screenSize
 var health = Health.new()
+var inventory = Inventory.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	EventBus.connect("item_pick", add_item)
+	EventBus.connect("item_delete", item_delete)
+	
 	screenSize = get_viewport_rect().size
 	
 	health.maxHealth = GlobalInfo.playerHealth
 	health.health = GlobalInfo.playerHealth
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,3 +38,20 @@ func _process(delta):
 	
 	position += velocity * delta
 	#position = position.clamp(Vector2.ZERO, screenSize)
+
+func add_item(item):
+	inventory.append(item)
+	$inventory_UI.add_item_UI(item)
+	print(inventory.items)
+
+func item_delete(index):
+	inventory.pop(index)
+
+func _on_body_entered(body):
+	if body.has_method("is_active"):
+		body.call("is_active")
+
+
+func _on_body_exited(body):
+	if body.has_method("is_active"):
+		body.call("is_active")
