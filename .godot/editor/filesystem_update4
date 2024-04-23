@@ -1,9 +1,1 @@
-res://scenes/world.tscn
-res://scripts/player_controller.gd
-res://scenes/heart.tscn
-res://scenes/sword.tscn
-res://scenes/attack_component.tscn
-res://scenes/player.tscn
-res://scenes/global_info.tscn
-res://scenes/Equipment.tscn
-res://scenes/world.gd
+res://scenes/battle_scenes/battle_scripts/core_attack_patern.gd
