@@ -17,4 +17,4 @@ func _process(delta):
 			self.queue_free()
 
 func pick_up():
-	EventBus.emit_signal("item_pick", resource)
+	EventBus.emit_signal("item_pick", resource, GlobalInfo.get_new_id())

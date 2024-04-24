@@ -8,3 +8,4 @@ script = ExtResource("1_k5jbg")
 damage = 10
 name = "test_weapon"
 texture = ExtResource("2_ifepx")
+type = 1

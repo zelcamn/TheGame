@@ -7,3 +7,4 @@
 script = ExtResource("1_7ibgn")
 name = "test1"
 texture = ExtResource("2_fdt0e")
+type = 1

@@ -1,23 +1,37 @@
 extends Node
 class_name Inventory
 
-var weapon: Resource
-var armor: Resource
+var weapon: Resource = null
+var armor: Resource = null
 
-var items: Array
+var items: Dictionary
 
-func append(item: Resource):
-	items.append(item)
+func append(item: Resource, index: int):
+	items[index] = item
 
 func pop(index: int):
-	items.pop_at(index)
+	var result = items[index]
+	items.erase(index)
+	return result
 
 func assign_weapon(index: int):
-	var buffer = weapon
+	if weapon != null:
+		var buffer = weapon
+		weapon = items[index]
+		return buffer
 	weapon = items[index]
-	items[index] = buffer
+	return null
+	#var buffer = weapon
+	#weapon = items[index]
+	#items[index] = buffer
 
 func assign_armor(index: int):
-	var buffer = armor
+	if armor != null:
+		var buffer = armor
+		armor = items[index]
+		return buffer
 	armor = items[index]
-	items[index] = buffer
+	return null
+	#var buffer = armor
+	#armor = items[index]
+	#items[index] = buffer

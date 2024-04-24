@@ -15,3 +15,6 @@ res://gameFiles/inventory/item_ui.gd
 res://gameFiles/scenes/scripts/base_entity.gd
 res://gameFiles/resources/test_cons2.tres
 res://gameFiles/resources/test_weapon.tres
+res://gameFiles/inventory/inventory.gd
+res://gameFiles/globals/global_info.gd
+res://gameFiles/inventory/items/baseResources/weapon.gd
