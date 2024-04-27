@@ -1,4 +1,5 @@
 extends Control
+class_name Item_UI
 
 @export var resource: Item
 

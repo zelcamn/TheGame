@@ -18,3 +18,4 @@ res://gameFiles/resources/test_weapon.tres
 res://gameFiles/inventory/inventory.gd
 res://gameFiles/globals/global_info.gd
 res://gameFiles/inventory/items/baseResources/weapon.gd
+res://gameFiles/inventory/slot_ui.gd

@@ -21,9 +21,6 @@ func assign_weapon(index: int):
 		return buffer
 	weapon = items[index]
 	return null
-	#var buffer = weapon
-	#weapon = items[index]
-	#items[index] = buffer
 
 func assign_armor(index: int):
 	if armor != null:
@@ -32,6 +29,3 @@ func assign_armor(index: int):
 		return buffer
 	armor = items[index]
 	return null
-	#var buffer = armor
-	#armor = items[index]
-	#items[index] = buffer

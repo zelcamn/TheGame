@@ -11,7 +11,7 @@ func is_active():
 	isActive = !isActive
 
 func _process(delta):
-	if isActive and Input.is_action_just_pressed("interaction"):
+	if isActive and Input.is_action_just_pressed("interaction") and !GlobalInfo.isInventoryActive:
 		if resource.has_method("interact"):
 			pick_up()
 			self.queue_free()

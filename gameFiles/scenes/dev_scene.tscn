@@ -14,6 +14,10 @@ position = Vector2(89, 181)
 position = Vector2(551, 186)
 resource = ExtResource("3_n7ur3")
 
+[node name="base_entity4" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(156, 374)
+resource = ExtResource("3_n7ur3")
+
 [node name="base_entity3" parent="." instance=ExtResource("2_yga1o")]
 position = Vector2(345, 413)
 resource = ExtResource("3_wga27")

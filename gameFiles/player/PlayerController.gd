@@ -9,6 +9,7 @@ func _ready():
 	EventBus.connect("equip", item_equip)
 	EventBus.connect("item_pick", add_item)
 	EventBus.connect("item_delete", item_delete)
+	EventBus.connect("item_unequip", item_unequip)
 	
 	screenSize = get_viewport_rect().size
 	
@@ -54,12 +55,22 @@ func item_equip(item: Object):
 		var item_in_slot = inventory.assign_weapon(item.id)
 		if item_in_slot != null:
 			add_item(item_in_slot, GlobalInfo.get_new_id())
+		$inventory_UI.add_item_in_slot_UI(item.resource)
 		item.delete_self()
 	elif item.resource.type == 2:
 		var item_in_slot = inventory.assign_armor(item.id)
 		if item_in_slot != null:
 			add_item(item_in_slot, GlobalInfo.get_new_id())
+		$inventory_UI.add_item_in_slot_UI(item.resource)
 		item.delete_self()
+
+func item_unequip(res: Resource):
+	if res.type == 1:
+		add_item(res, GlobalInfo.get_new_id())
+		inventory.weapon = null
+	if res.type == 2:
+		add_item(res, GlobalInfo.get_new_id())
+		inventory.armor = null
 
 func _on_body_entered(body):
 	if body.has_method("is_active"):

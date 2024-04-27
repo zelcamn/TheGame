@@ -25,5 +25,10 @@ func add_item_UI(res: Resource, index: int):
 	var newItem = item_UI_scene.instantiate()
 	newItem.resource = res
 	newItem.id = index
-	$NinePatchRect/ScrollContainer/GridContainer.add_child(newItem)
-	
+	$HBoxContainer/NinePatchRect/ScrollContainer/GridContainer.add_child(newItem)
+
+func add_item_in_slot_UI(res: Resource):
+	if res.type == 1:
+		$HBoxContainer/VBoxContainer/WeaponSlot.resource = res
+	if res.type == 2:
+		$HBoxContainer/VBoxContainer/ArmorSlot.resource = res
