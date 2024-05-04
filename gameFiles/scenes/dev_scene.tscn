@@ -24,3 +24,9 @@ resource = ExtResource("3_wga27")
 
 [node name="Player" parent="." instance=ExtResource("1_cbxf1")]
 position = Vector2(292, 170)
+
+[node name="base_entity5" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(68, 315)
+
+[node name="base_entity" parent="base_entity5" instance=ExtResource("2_yga1o")]
+position = Vector2(89, 181)

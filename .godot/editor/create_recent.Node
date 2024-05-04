@@ -1,8 +1,8 @@
+TextureRect
 VBoxContainer
 HBoxContainer
 Control
 ColorRect
-TextureRect
 NinePatchRect
 ScrollContainer
 GridContainer
