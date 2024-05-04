@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="baseEffect" load_steps=3 format=3 uid="uid://df04j436nhyp1"]
+
+[ext_resource type="Script" path="res://gameFiles/player/systems/inventory/items/customResources/consumablesEffects/base_effect.gd" id="1_7ibgn"]
+[ext_resource type="Texture2D" uid="uid://c1dg7ls1nqrog" path="res://res/sprites/objects/placeHolder.png" id="2_fdt0e"]
+
+
+[resource]
+script = ExtResource("1_7ibgn")
+name = "test1"
+texture = ExtResource("2_fdt0e")
+type = 1

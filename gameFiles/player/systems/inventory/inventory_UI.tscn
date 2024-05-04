@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpl7grpuid6sp"]
+
+[ext_resource type="Script" path="res://gameFiles/player/systems/inventory/inventory_UI.gd" id="1_tfyx5"]
+[ext_resource type="PackedScene" uid="uid://diewxfpwnuyaq" path="res://gameFiles/player/systems/inventory/item_ui.tscn" id="3_nuxkr"]
+[ext_resource type="Script" path="res://gameFiles/player/systems/inventory/slot_ui.gd" id="4_e3t8h"]
+[ext_resource type="Texture2D" uid="uid://dm73g7ceurbim" path="res://res/sprites/inventory/inventory.png" id="4_fh3cl"]
+
+[node name="inventory_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfyx5")
+item_UI_scene = ExtResource("3_nuxkr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -152.0
+offset_right = 254.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="WeaponSlot" parent="HBoxContainer/VBoxContainer" instance=ExtResource("3_nuxkr")]
+layout_mode = 2
+script = ExtResource("4_e3t8h")
+
+[node name="ArmorSlot" parent="HBoxContainer/VBoxContainer" instance=ExtResource("3_nuxkr")]
+layout_mode = 2
+script = ExtResource("4_e3t8h")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_fh3cl")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/NinePatchRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4

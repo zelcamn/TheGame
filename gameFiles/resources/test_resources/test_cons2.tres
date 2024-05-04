@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=3 format=3 uid="uid://di2s5e4u4wb87"]
+
+[ext_resource type="Script" path="res://gameFiles/player/systems/inventory/items/baseResources/consumable.gd" id="1_fxjiu"]
+[ext_resource type="Texture2D" uid="uid://be1n62riqnpq2" path="res://res/sprites/objects/placeHolder2.png" id="2_horyk"]
+
+
+[resource]
+script = ExtResource("1_fxjiu")
+name = "test2"
+texture = ExtResource("2_horyk")

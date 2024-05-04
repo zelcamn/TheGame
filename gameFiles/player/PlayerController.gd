@@ -6,7 +6,7 @@ var health = Health.new()
 var inventory = Inventory.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	EventBus.connect("equip", item_equip)
+	EventBus.connect("item_interact", item_interact)
 	EventBus.connect("item_pick", add_item)
 	EventBus.connect("item_delete", item_delete)
 	EventBus.connect("item_unequip", item_unequip)
@@ -44,14 +44,15 @@ func _process(delta):
 func add_item(item: Resource, index: int):
 	inventory.append(item, index)
 	$inventory_UI.add_item_UI(item, index)
-	print(inventory.items)
 
 func item_delete(index):
 	inventory.pop(index)
 
-func item_equip(item: Object):
-	print(item.resource.type)
-	if item.resource.type == 1:
+func item_interact(item: Object):
+	if item.resource.type == 0:
+		item.resource.interact(self)
+		item.delete_self()
+	elif item.resource.type == 1:
 		var item_in_slot = inventory.assign_weapon(item.id)
 		if item_in_slot != null:
 			add_item(item_in_slot, GlobalInfo.get_new_id())

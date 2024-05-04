@@ -1,4 +1,3 @@
-Consumable
-Resource
-Weapon
-baseEffect
+SetPlayerHP
+GetPlayerHP
+GetPlayerWeapon
