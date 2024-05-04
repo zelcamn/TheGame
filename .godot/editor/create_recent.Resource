@@ -1,0 +1,4 @@
+Consumable
+Resource
+Weapon
+baseEffect

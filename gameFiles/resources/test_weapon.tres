@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://d3c7iyjfbroyi"]
+
+[ext_resource type="Script" path="res://gameFiles/inventory/items/baseResources/weapon.gd" id="1_k5jbg"]
+[ext_resource type="Texture2D" uid="uid://c6r4moafqedu1" path="res://res/sprites/objects/placeHolder3.png" id="2_ifepx"]
+
+[resource]
+script = ExtResource("1_k5jbg")
+damage = 10
+name = "test_weapon"
+texture = ExtResource("2_ifepx")
+type = 1

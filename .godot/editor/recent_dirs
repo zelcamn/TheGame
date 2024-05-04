@@ -1,1 +1,5 @@
-res://scenes/scripts
+res://gameFiles/inventory
+res://gameFiles/resources
+res://gameFiles/globals
+res://gameFiles/scenes
+res://gameFiles/scenes/scripts

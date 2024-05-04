@@ -1,7 +1,6 @@
-res://scenes/player.tscn
-res://scenes/devScene.tscn
-res://scenes/global_info.tscn
-res://scenes/scripts/healthSystem.gd
-res://scenes/scripts/global_info.gd
-res://scenes/scripts/PlayerController.gd
-res://scenes/scripts/player.gd
+res://gameFiles/player/player.tscn
+res://gameFiles/globals/global_info.tscn
+res://gameFiles/scenes/base_entity.tscn
+res://gameFiles/scenes/dev_scene.tscn
+res://gameFiles/inventory/inventory_UI.tscn
+res://gameFiles/inventory/item_ui.tscn

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhgj4dpn7bvug"]
+
+[ext_resource type="PackedScene" uid="uid://br0mek24tjxjd" path="res://gameFiles/player/player.tscn" id="1_cbxf1"]
+[ext_resource type="PackedScene" uid="uid://1r63h0pkciim" path="res://gameFiles/scenes/base_entity.tscn" id="2_yga1o"]
+[ext_resource type="Resource" uid="uid://di2s5e4u4wb87" path="res://gameFiles/resources/test_cons2.tres" id="3_n7ur3"]
+[ext_resource type="Resource" uid="uid://d3c7iyjfbroyi" path="res://gameFiles/resources/test_weapon.tres" id="3_wga27"]
+
+[node name="DevScene" type="Node2D"]
+
+[node name="base_entity" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(89, 181)
+
+[node name="base_entity2" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(551, 186)
+resource = ExtResource("3_n7ur3")
+
+[node name="base_entity4" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(156, 374)
+resource = ExtResource("3_n7ur3")
+
+[node name="base_entity3" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(345, 413)
+resource = ExtResource("3_wga27")
+
+[node name="Player" parent="." instance=ExtResource("1_cbxf1")]
+position = Vector2(292, 170)
+
+[node name="base_entity5" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(68, 315)
+
+[node name="base_entity" parent="base_entity5" instance=ExtResource("2_yga1o")]
+position = Vector2(89, 181)
