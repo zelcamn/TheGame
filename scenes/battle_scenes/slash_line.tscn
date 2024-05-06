@@ -1,25 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3pu6vhxnf67b"]
+[gd_scene load_steps=7 format=3 uid="uid://d3pu6vhxnf67b"]
 
 [ext_resource type="Script" path="res://scenes/battle_scenes/battle_scripts/slash_line.gd" id="1_c7lq7"]
-[ext_resource type="Texture2D" uid="uid://ddufvn6sx5ahp" path="res://res/sprites/testSprites/меч.png" id="1_w8676"]
+[ext_resource type="Texture2D" uid="uid://bfjg63rkib2k2" path="res://res/sprites/battle/Player-attack1.png" id="2_lr71g"]
+[ext_resource type="Texture2D" uid="uid://kt2i3wwdspkp" path="res://res/sprites/battle/Player-attack2.png" id="3_ycsfj"]
+[ext_resource type="Texture2D" uid="uid://q0bp74a05v75" path="res://res/sprites/battle/Player-attack3.png" id="4_k1air"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wv7qb"]
-size = Vector2(10, 539)
+[sub_resource type="SpriteFrames" id="SpriteFrames_o14n1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lr71g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ycsfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k1air")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4my6t"]
+radius = 9.96414
+height = 273.25
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_c7lq7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.265, 0.264838)
-texture = ExtResource("1_w8676")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 42.5)
-shape = SubResource("RectangleShape2D_wv7qb")
-disabled = true
-
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-1.5, 1.21593e-05)
 scale = Vector2(8.35, 33.1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5625, 3.4)
+sprite_frames = SubResource("SpriteFrames_o14n1")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14, 139)
+rotation = 0.226893
+shape = SubResource("CapsuleShape2D_4my6t")
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-16, -137)
+rotation = -0.230383
+shape = SubResource("CapsuleShape2D_4my6t")
+disabled = true
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

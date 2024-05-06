@@ -6,7 +6,7 @@ var playerHealth = 100
 var playerBaseDamage = 5
 
 #параметры мобов
-var slimeHealth = 10
+var slimeHealth = 20
 
 #вспомогательные
 var attack_is_pressed = 0

@@ -17,6 +17,7 @@ func _physics_process(delta):
 func PressAttack():
 	if Input.is_action_just_pressed("ui_accept"):
 		get_node("CollisionShape2D").disabled = false
+		get_node("CollisionShape2D2").disabled = false
 		#queue_free()
 		del()
 

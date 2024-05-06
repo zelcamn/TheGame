@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b35w6t3um7c8c"]
+[gd_scene load_steps=2 format=3 uid="uid://b35w6t3um7c8c"]
 
 [ext_resource type="Script" path="res://scenes/battle_scenes/battle_scripts/core_attack_patern.gd" id="1_2537p"]
-[ext_resource type="PackedScene" uid="uid://b7ae82kihyk5w" path="res://scenes/battle_scenes/heart.tscn" id="2_1vxm1"]
 
 [node name="core_attack_patern" type="Node2D"]
 script = ExtResource("1_2537p")
-
-[node name="heart" parent="." instance=ExtResource("2_1vxm1")]
-position = Vector2(611, 324)
