@@ -13,3 +13,6 @@ res://gameFiles/resources/test_resources/set_player_hp.tres
 res://gameFiles/player/PlayerController.gd
 res://gameFiles/globals/event_bus.gd
 res://gameFiles/player/systems/inventory/item_ui.gd
+res://gameFiles/enemies/basic_enemy.gd
+res://gameFiles/enemies/basic_enemy.tscn
+res://gameFiles/player/player.tscn

@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 var speed = GlobalInfo.playerSpeed
 var screenSize
@@ -19,7 +19,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("moveDown"):
 		velocity.y += 1
