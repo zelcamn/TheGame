@@ -1,16 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://taryb7hgjwyc"]
+[gd_scene load_steps=12 format=3 uid="uid://taryb7hgjwyc"]
 
 [ext_resource type="Script" path="res://TEST1.gd" id="1_tbu3q"]
+[ext_resource type="Texture2D" uid="uid://bb6vhnitigd4l" path="res://res/sprites/battle/фон.png" id="2_etyf1"]
+[ext_resource type="Texture2D" uid="uid://dmqy14yuorje2" path="res://res/sprites/battle/Окно боя 1.1.png" id="3_l70lc"]
+[ext_resource type="Texture2D" uid="uid://dagqbppf8if4e" path="res://res/sprites/battle/1.1.png" id="4_1tti0"]
+[ext_resource type="Texture2D" uid="uid://c1bqwgx0bg8ea" path="res://res/sprites/battle/1.2.png" id="5_mwuds"]
+[ext_resource type="Texture2D" uid="uid://diaieaa2ib5xx" path="res://res/sprites/battle/2.1.png" id="6_npnfp"]
+[ext_resource type="Texture2D" uid="uid://cm4c526libdkb" path="res://res/sprites/battle/2.2.png" id="7_7eokd"]
+[ext_resource type="Texture2D" uid="uid://bw3x57xtltthv" path="res://res/sprites/battle/4.1.png" id="8_c5w06"]
+[ext_resource type="Texture2D" uid="uid://dl8b0b50yxji5" path="res://res/sprites/battle/3.1.png" id="8_mrigc"]
+[ext_resource type="Texture2D" uid="uid://cypy4fvr4q87u" path="res://res/sprites/battle/3.2.png" id="9_c6q2w"]
+[ext_resource type="Texture2D" uid="uid://be2ajjmvl1pgt" path="res://res/sprites/battle/4.2.png" id="9_cx1v7"]
 
 [node name="TEST1" type="Node2D"]
 script = ExtResource("1_tbu3q")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 117.0
-offset_top = 105.0
-offset_right = 241.0
-offset_bottom = 136.0
-text = "Атака 1
-"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(962, 541)
+scale = Vector2(0.996354, 0.994444)
+texture = ExtResource("2_etyf1")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(960, 550)
+scale = Vector2(0.578613, 0.622864)
+texture = ExtResource("3_l70lc")
+
+[node name="Attack x1" type="TextureButton" parent="."]
+offset_left = 350.0
+offset_top = 880.0
+offset_right = 650.0
+offset_bottom = 1030.0
+texture_normal = ExtResource("4_1tti0")
+texture_pressed = ExtResource("5_mwuds")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Attack x3" type="TextureButton" parent="."]
+offset_left = 650.0
+offset_top = 880.0
+offset_right = 950.0
+offset_bottom = 1030.0
+texture_normal = ExtResource("6_npnfp")
+texture_pressed = ExtResource("7_7eokd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="heal" type="TextureButton" parent="."]
+offset_left = 1250.0
+offset_top = 880.0
+offset_right = 1550.0
+offset_bottom = 1030.0
+texture_normal = ExtResource("8_c5w06")
+texture_pressed = ExtResource("9_cx1v7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="defense" type="TextureButton" parent="."]
+offset_left = 950.0
+offset_top = 880.0
+offset_right = 1250.0
+offset_bottom = 1030.0
+texture_normal = ExtResource("8_mrigc")
+texture_pressed = ExtResource("9_c6q2w")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Attack x1" to="." method="_on_attack_x1_pressed"]
+[connection signal="pressed" from="Attack x3" to="." method="_on_attack_x_3_pressed"]

@@ -4,8 +4,8 @@ extends Node2D
 const slash_line_scene = preload("res://scenes/battle_scenes/slash_line.tscn")
 
 #параметры вызова атак
-var line = [[Vector2(0,350),0,Vector2(1,0)],[Vector2(0,-200),45,Vector2(1.15,1.15)],
-[Vector2(1000,-200),135,Vector2(-1.3,1.3)]] #в теории можно наполнять из вне
+@export var line := [[Vector2(350,550),0,Vector2(1,0)],[Vector2(365,220),35,Vector2(1.15,0.85)],
+[Vector2(1550,220),145,Vector2(-1.3,0.85)]] #в теории можно наполнять из вне
 
 func _ready():
 	for i in line:

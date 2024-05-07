@@ -20,7 +20,7 @@ func hit():
 	print("Current health: " + str(health.health))
 	
 	health.health = hp.damage(health.health,dmg) #нанесение урона и возвращение хп
-	global_position = Vector2(randf_range(200,800),randf_range(200,400))
+	global_position = Vector2(randf_range(700,1200),randf_range(400,700))
 	print("Taken " + str(dmg) + " damage")
 	print("Health after damage: " + str(health.health) +"\n")
 	return health.health

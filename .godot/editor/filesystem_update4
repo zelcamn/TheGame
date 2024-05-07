@@ -1,10 +1,10 @@
+res://scenes/battle_scenes/test_1.tscn
 res://scenes/battle_scenes/heart.tscn
-res://scenes/battle_scenes/battle_scripts/core_attack_patern.gd
-res://scenes/battle_scenes/battle_scripts/heart.gd
 res://scenes/battle_scenes/core_attack_patern.tscn
 res://scenes/battle_scenes/slash_line.tscn
-res://scenes/battle_scenes/battle_scripts/slash_line.gd
-res://TEST1.gd
-res://scenes/battle_scenes/test_1.tscn
-res://scenes/scripts/global_info.gd
 res://scenes/global_info.tscn
+res://scenes/battle_scenes/TextureButton.gd
+res://TEST1.gd
+res://scenes/battle_scenes/battle_scripts/heart.gd
+res://scenes/battle_scenes/battle_scripts/core_attack_patern.gd
+res://scenes/battle_scenes/battle_scripts/slash_line.gd
