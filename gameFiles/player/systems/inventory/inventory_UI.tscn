@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://gameFiles/player/systems/inventory/inventory_UI.gd" id="1_tfyx5"]
 [ext_resource type="PackedScene" uid="uid://diewxfpwnuyaq" path="res://gameFiles/player/systems/inventory/item_ui.tscn" id="3_nuxkr"]
+[ext_resource type="Texture2D" uid="uid://ddov4i8yj3g5a" path="res://res/sprites/inventory/inventory_case1.png" id="4_8e7bv"]
 [ext_resource type="Script" path="res://gameFiles/player/systems/inventory/slot_ui.gd" id="4_e3t8h"]
-[ext_resource type="Texture2D" uid="uid://dm73g7ceurbim" path="res://res/sprites/inventory/inventory.png" id="4_fh3cl"]
 
 [node name="inventory_UI" type="Control"]
 layout_mode = 3
@@ -12,10 +12,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_top = -54.0
+offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tfyx5")
 item_UI_scene = ExtResource("3_nuxkr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(54, 48)
+scale = Vector2(0.316733, 0.316733)
+texture = ExtResource("4_8e7bv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -46,7 +53,6 @@ script = ExtResource("4_e3t8h")
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("4_fh3cl")
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16

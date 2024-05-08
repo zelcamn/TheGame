@@ -1,38 +1,53 @@
-[gd_scene load_steps=9 format=3 uid="uid://br0mek24tjxjd"]
+[gd_scene load_steps=12 format=3 uid="uid://br0mek24tjxjd"]
 
 [ext_resource type="Script" path="res://gameFiles/player/PlayerController.gd" id="1_rd8md"]
-[ext_resource type="Texture2D" uid="uid://cnu5xd4xao0j6" path="res://res/sprites/player/stop.png" id="2_dcasc"]
-[ext_resource type="Texture2D" uid="uid://dkn3j0ayhrobw" path="res://res/sprites/player/walk.png" id="3_8tsmi"]
+[ext_resource type="Texture2D" uid="uid://cc6u8l3outx7p" path="res://res/sprites/player/char_test.png" id="2_rcijj"]
 [ext_resource type="PackedScene" uid="uid://cpl7grpuid6sp" path="res://gameFiles/player/systems/inventory/inventory_UI.tscn" id="5_pgo2r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqie6"]
+atlas = ExtResource("2_rcijj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le18f"]
+atlas = ExtResource("2_rcijj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftrra"]
+atlas = ExtResource("2_rcijj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww0xh"]
+atlas = ExtResource("2_rcijj")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_811fi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dcasc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_8tsmi")
+"texture": SubResource("AtlasTexture_yqie6")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dcasc")
+"texture": SubResource("AtlasTexture_le18f")
 }],
 "loop": true,
 "name": &"stop",
-"speed": 5.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8tsmi")
+"texture": SubResource("AtlasTexture_ftrra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww0xh")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm14j"]
@@ -50,8 +65,11 @@ radius = 38.3275
 script = ExtResource("1_rd8md")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.84217e-14, -1.19209e-07)
+scale = Vector2(4.51563, 4.51563)
 sprite_frames = SubResource("SpriteFrames_811fi")
-animation = &"stop"
+animation = &"walk"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 scale = Vector2(2.5, 2.5)
@@ -65,6 +83,7 @@ script = SubResource("GDScript_rjaet")
 shape = SubResource("CircleShape2D_4w2lg")
 
 [node name="inventory_UI" parent="." instance=ExtResource("5_pgo2r")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
