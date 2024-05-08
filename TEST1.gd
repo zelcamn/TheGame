@@ -26,6 +26,7 @@ func _on_attack_x1_pressed():
 		#$"Attack x1".release_focus()
 		$"Attack x1".disabled = true
 		$"Attack x3".disabled = true
+		EventBus.emit_signal("attack_is_pressed")
 		block = 1 # Replace with function body.
 
 
@@ -39,6 +40,7 @@ func _on_attack_x_3_pressed():
 		#$"Attack x1".release_focus()
 		$"Attack x1".disabled = true
 		$"Attack x3".disabled = true
+		EventBus.emit_signal("attack_is_pressed")
 		block = 1  # Replace with function body.
 
 

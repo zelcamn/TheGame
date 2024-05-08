@@ -18,6 +18,7 @@ func PressAttack():
 	if Input.is_action_just_pressed("ui_accept"):
 		get_node("CollisionShape2D").disabled = false
 		get_node("CollisionShape2D2").disabled = false
+		EventBus.emit_signal("attack_is_pressed")
 		#queue_free()
 		del()
 
@@ -25,4 +26,5 @@ func del():
 	queue_free()
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	#queue_free()
+	EventBus.emit_signal("attack_is_pressed")
 	del()

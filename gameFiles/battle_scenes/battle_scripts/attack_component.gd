@@ -4,9 +4,13 @@ extends Node
 class_name attack_component
 
 
-#var attack_damage = GlobalInfo.playerBaseDamage #временно установлен базовый урон
 
-func damage(health,attack_damage):
+#var attack_damage = GlobalInfo.playerBaseDamage #временно установлен базовый урон
+#var test = preload("res://gameFiles/player/systems/inventory/items/customResources/weapons/base_wapon.tres")
+var attack_damage = GlobalInfo.get_player_weapon().damage
+ 
+
+func damage(health):
 	health -= attack_damage #берётся из параметров оружия
 	#print(health)
 	if health <= 0:

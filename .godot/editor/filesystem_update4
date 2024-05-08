@@ -1,8 +1,11 @@
 res://gameFiles/battle_scenes/test_1.tscn
+res://gameFiles/scenes/scripts/base_entity.gd
 res://gameFiles/battle_scenes/battle_scripts/core_attack_patern.gd
-res://TEST1.gd
 res://gameFiles/battle_scenes/heart.tscn
 res://gameFiles/battle_scenes/attack_component.tscn
 res://gameFiles/battle_scenes/core_attack_patern.tscn
 res://gameFiles/battle_scenes/slash_line.tscn
+res://gameFiles/globals/event_bus.gd
 res://gameFiles/globals/global_info.gd
+res://gameFiles/battle_scenes/battle_scripts/slash_line.gd
+res://TEST1.gd

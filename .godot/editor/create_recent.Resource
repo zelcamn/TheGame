@@ -1,3 +1,4 @@
+Weapon
 SetPlayerHP
 GetPlayerHP
 GetPlayerWeapon
