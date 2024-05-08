@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalInfo="*res://scenes/scripts/global_info.gd"
+GlobalInfo="*res://gameFiles/globals/global_info.gd"
 
 [display]
 

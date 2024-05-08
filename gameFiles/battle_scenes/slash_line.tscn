@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d3pu6vhxnf67b"]
 
-[ext_resource type="Script" path="res://scenes/battle_scenes/battle_scripts/slash_line.gd" id="1_c7lq7"]
+[ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/slash_line.gd" id="1_c7lq7"]
 [ext_resource type="Texture2D" uid="uid://bfjg63rkib2k2" path="res://res/sprites/battle/Player-attack1.png" id="2_lr71g"]
 [ext_resource type="Texture2D" uid="uid://kt2i3wwdspkp" path="res://res/sprites/battle/Player-attack2.png" id="3_ycsfj"]
 [ext_resource type="Texture2D" uid="uid://q0bp74a05v75" path="res://res/sprites/battle/Player-attack3.png" id="4_k1air"]

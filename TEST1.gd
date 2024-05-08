@@ -1,7 +1,7 @@
 extends Node2D
 
-const enemy = preload("res://scenes/battle_scenes/heart.tscn")
-const attack = preload("res://scenes/battle_scenes/core_attack_patern.tscn")
+const enemy = preload("res://gameFiles/battle_scenes/heart.tscn")
+const attack = preload("res://gameFiles/battle_scenes/core_attack_patern.tscn")
 # Called when the node enters the scene tree for the first time.
 var block = 0
 
