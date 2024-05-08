@@ -1,0 +1,3 @@
+SetPlayerHP
+GetPlayerHP
+GetPlayerWeapon

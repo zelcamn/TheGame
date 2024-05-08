@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://1r63h0pkciim"]
+
+[ext_resource type="Script" path="res://gameFiles/scenes/scripts/base_entity.gd" id="1_do0f0"]
+[ext_resource type="Resource" uid="uid://df04j436nhyp1" path="res://gameFiles/resources/test_resources/test_cons.tres" id="2_fyavv"]
+[ext_resource type="Texture2D" uid="uid://c1dg7ls1nqrog" path="res://res/sprites/objects/placeHolder.png" id="2_t88os"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eif04"]
+radius = 36.4966
+
+[node name="base_entity" type="StaticBody2D"]
+collision_layer = 3
+script = ExtResource("1_do0f0")
+resource = ExtResource("2_fyavv")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.38419e-07, -7.15256e-07)
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("2_t88os")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eif04")
