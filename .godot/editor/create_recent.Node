@@ -1,7 +1,8 @@
+Control
+Button
 Container
 Sprite2D
 TextureButton
-Button
 AnimatedSprite2D
 Timer
 VisibleOnScreenNotifier2D

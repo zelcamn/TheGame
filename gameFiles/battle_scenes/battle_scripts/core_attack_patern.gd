@@ -10,19 +10,35 @@ const slash_line_scene = preload("res://gameFiles/battle_scenes/slash_line.tscn"
 var attack_count = 0
 
 var newAttack :bool
+var attackFinished : bool
 
 func _ready():
 	EventBus.connect("attack_is_pressed", attack_sign)
+	EventBus.connect("attack_is_finished", finish_sign)
 
 func _process(delta):
 	if newAttack and attack_count <= line.size()-1:
 		create_slash_line(line[attack_count][0],line[attack_count][1],line[attack_count][2])
 		newAttack = false
 		attack_count += 1
+	if attack_count > line.size()-1 and newAttack:
+		print("end")
+		newAttack = false
+		attackFinished = true
+	if_finished()
+	
+
+func if_finished():
+	if attackFinished:
+		get_tree().change_scene_to_file("res://temp_enemy_attack.tscn")
+		attackFinished = false
 
 func attack_sign():
 	newAttack = true
 	
+func finish_sign():
+	attackFinished = false
+
 func create_slash_line(pos,rot,dir):
 	
 	var slash_line = slash_line_scene.instantiate()

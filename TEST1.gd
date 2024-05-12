@@ -5,27 +5,28 @@ const attack = preload("res://gameFiles/battle_scenes/core_attack_patern.tscn")
 # Called when the node enters the scene tree for the first time.
 var block = 0
 
+var dead : bool
+	
 func _ready():
+	EventBus.connect("enemy_is_dead", dead_sign)
 	var enemy = enemy.instantiate()
 	#enemy.scale = Vector2(10,10)
 	enemy.global_position = Vector2(960,600)
 	add_child(enemy) # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if dead:
+		get_tree().change_scene_to_file("res://gameFiles/scenes/dev_scene.tscn")
+		dead = false
 
 
 func _on_attack_x1_pressed():
 	if block == 0:
 		var attack = attack.instantiate()
 		attack.line = [[Vector2(960,200),90,Vector2(0,1)]]
-		#attack.scale = Vector2(2,2)
 		add_child(attack)
-		#$"Attack x1".release_focus()
-		$"Attack x1".disabled = true
-		$"Attack x3".disabled = true
+		block_buttons(true)
 		EventBus.emit_signal("attack_is_pressed")
 		block = 1 # Replace with function body.
 
@@ -38,10 +39,22 @@ func _on_attack_x_3_pressed():
 		#attack.scale = Vector2(2,2)
 		add_child(attack)
 		#$"Attack x1".release_focus()
-		$"Attack x1".disabled = true
-		$"Attack x3".disabled = true
+		block_buttons(true)
 		EventBus.emit_signal("attack_is_pressed")
 		block = 1  # Replace with function body.
+		
+func _on_defense_pressed():
+	block_buttons(true) # Replace with function body.
+	
+func _on_heal_pressed():
+	block_buttons(true) # Replace with function body.
 
-
+func block_buttons(set_:bool):
+	$"Attack x1".disabled = set_
+	$"Attack x3".disabled = set_
+	$defense.disabled = set_
+	$heal.disabled = set_
  # Replace with function body.
+
+func dead_sign():
+	dead = true

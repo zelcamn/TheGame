@@ -1,11 +1,12 @@
 extends Node
 
-var playerSpeed = 100
+var playerSpeed = 300
 var playerHealth = 100
 var playerBaseDamage = 5
 
 #параметры мобов
 var slimeHealth = 20
+@export var current_mob_health : int
 
 #вспомогательные
 var attack_is_pressed = 0

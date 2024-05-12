@@ -11,8 +11,15 @@ var health = Health.new()
 
 #подгрузка начальных хп
 func _ready():
+	if !GlobalInfo.current_mob_health:
+		GlobalInfo.current_mob_health = GlobalInfo.slimeHealth
+	else:
+		GlobalInfo.current_mob_health = 5
+	#GlobalInfo.current_mob_health = GlobalInfo.slimeHealth
 	health.maxHealth = GlobalInfo.slimeHealth
-	health.health = GlobalInfo.slimeHealth
+	#health.health = GlobalInfo.slimeHealth
+	health.health = GlobalInfo.current_mob_health
+	#print(GlobalInfo.current_mob_health)
 
 #функция для всех врагов чтобы наносить урон
 func hit():
