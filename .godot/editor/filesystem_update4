@@ -4,3 +4,9 @@ res://gameFiles/player/systems/inventory/inventory_UI.tscn
 res://gameFiles/player/player.tscn
 res://gameFiles/player/systems/inventory/item_ui.tscn
 res://gameFiles/scenes/base_entity.tscn
+res://gameFiles/tilemaps/tileMapTest.tscn
+res://gameFiles/player/PlayerController.gd
+res://gameFiles/enemies/basic_enemy.gd
+res://gameFiles/enemies/basic_enemy.tscn
+res://gameFiles/globals/event_bus.gd
+res://gameFiles/globals/global_info.gd

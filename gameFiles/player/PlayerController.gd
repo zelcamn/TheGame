@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = GlobalInfo.playerSpeed
+@export var speed = 10
 var screenSize
 var health = Health.new()
 var inventory = Inventory.new()
@@ -20,7 +20,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
 	if Input.is_action_pressed("moveDown"):
 		velocity.y += 1
 	if Input.is_action_pressed("moveUp"):
@@ -38,7 +38,8 @@ func _physics_process(delta):
 		$PlayerSprite.animation = "stop"
 		$PlayerSprite.stop()
 	
-	position += velocity * delta
+	move_and_slide()
+	#position += velocity * delta
 	#position = position.clamp(Vector2.ZERO, screenSize)
 
 func add_item(item: Resource, index: int):
