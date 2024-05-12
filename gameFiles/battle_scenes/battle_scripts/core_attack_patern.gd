@@ -3,18 +3,16 @@ extends Node2D
 #const slash_line_scene = preload("res://scenes/sword.tscn")
 const slash_line_scene = preload("res://gameFiles/battle_scenes/slash_line.tscn")
 
-#параметры вызова атак
-#@export var line := [[Vector2(350,550),0,Vector2(1,0)],[Vector2(365,220),35,Vector2(1.15,0.85)],
-#[Vector2(1550,220),145,Vector2(-1.3,0.85)]] #в теории можно наполнять из вне
+
 @export var line : Array
 var attack_count = 0
 
 var newAttack :bool
-var attackFinished : bool
+var turnFinished : bool
 
 func _ready():
 	EventBus.connect("attack_is_pressed", attack_sign)
-	EventBus.connect("attack_is_finished", finish_sign)
+	#EventBus.connect("turn_is_finished", finish_sign)
 
 func _process(delta):
 	if newAttack and attack_count <= line.size()-1:
@@ -24,20 +22,11 @@ func _process(delta):
 	if attack_count > line.size()-1 and newAttack:
 		print("end")
 		newAttack = false
-		attackFinished = true
-	if_finished()
-	
-
-func if_finished():
-	if attackFinished:
-		get_tree().change_scene_to_file("res://temp_enemy_attack.tscn")
-		attackFinished = false
+		EventBus.emit_signal("turn_is_finished")
 
 func attack_sign():
 	newAttack = true
-	
-func finish_sign():
-	attackFinished = false
+
 
 func create_slash_line(pos,rot,dir):
 	

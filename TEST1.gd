@@ -5,9 +5,11 @@ const attack = preload("res://gameFiles/battle_scenes/core_attack_patern.tscn")
 # Called when the node enters the scene tree for the first time.
 var block = 0
 
-var dead : bool
+var enemy_is_dead : bool
+var turnFinished : bool
 	
 func _ready():
+	EventBus.connect("turn_is_finished", finish_sign)
 	EventBus.connect("enemy_is_dead", dead_sign)
 	var enemy = enemy.instantiate()
 	#enemy.scale = Vector2(10,10)
@@ -16,10 +18,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if dead:
+	if_turn_finished()
+	if enemy_is_dead:
 		get_tree().change_scene_to_file("res://gameFiles/scenes/dev_scene.tscn")
-		dead = false
+		enemy_is_dead = false
 
+func if_turn_finished():
+	if turnFinished:
+		print("Tsr")
+		get_tree().change_scene_to_file("res://temp_enemy_attack.tscn")
+		turnFinished = false
 
 func _on_attack_x1_pressed():
 	if block == 0:
@@ -57,4 +65,7 @@ func block_buttons(set_:bool):
  # Replace with function body.
 
 func dead_sign():
-	dead = true
+	enemy_is_dead = true
+	
+func finish_sign():
+	turnFinished = true

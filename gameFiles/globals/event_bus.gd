@@ -9,6 +9,6 @@ signal item_interact(item: Object)
 signal item_unequip(res: Resource)
 
 signal attack_is_pressed()
-signal attack_is_finished()
+signal turn_is_finished()
 
 signal enemy_is_dead()
