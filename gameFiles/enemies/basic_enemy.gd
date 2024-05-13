@@ -26,7 +26,7 @@ func _ready():
 	destinationPoint = transform.origin
 	startPoint = transform.origin
 	player = get_tree().get_nodes_in_group("Player")[0]
-	homePoint = self.position
+	homePoint = transform.origin
 
 func _physics_process(delta):
 	if moveDelta >= 1:
@@ -43,7 +43,8 @@ func _physics_process(delta):
 		pass
 		#destinationPoint = get_patrol_point()
 	#print(homePoint, destinationPoint, homePoint.distance_to(destinationPoint))
-	if moveDelta < 1 or isIdle == false:
+	print( homePoint.distance_to(transform.origin + destinationPoint.normalized()), homePoint, destinationPoint)
+	if (moveDelta < 1 or isIdle == false) and homePoint.distance_to(transform.origin + destinationPoint.normalized() * 10) < patrolDistance:
 		travel(destinationPoint, delta)
 
 func get_patrol_point() -> Vector2:
