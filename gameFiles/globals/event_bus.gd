@@ -12,3 +12,4 @@ signal attack_is_pressed()
 signal turn_is_finished()
 
 signal enemy_is_dead()
+signal player_is_dead()

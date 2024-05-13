@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://chhar0y1lgscg"]
+
+[ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/player_heart.gd" id="1_odfvv"]
+[ext_resource type="Texture2D" uid="uid://dn6rk17t35v0r" path="res://res/sprites/tempSprites/textures-2d-pixel-heart-1.png" id="1_s6oon"]
+[ext_resource type="PackedScene" uid="uid://h2gkpi2324v8" path="res://gameFiles/battle_scenes/attack_component.tscn" id="2_mjtc4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dviug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s6oon")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xpgda"]
+radius = 30.0167
+
+[node name="Player_heart" type="CharacterBody2D" node_paths=PackedStringArray("hp")]
+script = ExtResource("1_odfvv")
+hp = NodePath("attack_component")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.051, 0.05)
+sprite_frames = SubResource("SpriteFrames_dviug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_xpgda")
+
+[node name="attack_component" parent="." instance=ExtResource("2_mjtc4")]
+position = Vector2(0, 2)

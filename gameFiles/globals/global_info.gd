@@ -2,6 +2,7 @@ extends Node
 
 var playerSpeed = 300
 var playerHealth = 100
+@export var current_player_health : int
 var playerBaseDamage = 5
 
 #параметры мобов

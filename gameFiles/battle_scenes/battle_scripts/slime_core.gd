@@ -22,13 +22,13 @@ func _ready():
 	#print(GlobalInfo.current_mob_health)
 
 #функция для всех врагов чтобы наносить урон
-func hit():
+func hit(attack_damage):
 	#hp.damage(health.health,dmg)
-	hp.damage(health.health)
+	hp.damage(health.health,attack_damage)
 	print("Current health: " + str(health.health))
 	
 	#health.health = hp.damage(health.health,dmg)
-	health.health = hp.damage(health.health) #нанесение урона и возвращение хп
+	health.health = hp.damage(health.health,attack_damage) #нанесение урона и возвращение хп
 	global_position = Vector2(randf_range(700,1200),randf_range(400,700))
 	#print("Taken " + str(dmg) + " damage")
 	print("Health after damage: " + str(health.health) +"\n")
