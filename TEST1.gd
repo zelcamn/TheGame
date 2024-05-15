@@ -25,8 +25,7 @@ func _process(delta):
 
 func if_turn_finished():
 	if turnFinished:
-		print("Tsr")
-		get_tree().change_scene_to_file("res://temp_enemy_attack.tscn")
+		get_tree().change_scene_to_file("res://gameFiles/battle_scenes/slime_attack_scene.tscn")
 		turnFinished = false
 
 func _on_attack_x1_pressed():
@@ -66,6 +65,7 @@ func block_buttons(set_:bool):
 
 func dead_sign():
 	enemy_is_dead = true
+	GlobalInfo.current_mob_health = 0
 	
 func finish_sign():
 	turnFinished = true
