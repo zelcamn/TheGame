@@ -19,6 +19,10 @@ animations = [{
 radius = 30.0167
 
 [node name="Player_heart" type="CharacterBody2D" node_paths=PackedStringArray("hp")]
+position = Vector2(200, 200)
+scale = Vector2(0.75, 0.75)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_odfvv")
 hp = NodePath("attack_component")
 

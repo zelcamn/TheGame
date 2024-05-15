@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cksm6dpaxtuxm"]
+
+[ext_resource type="Texture2D" uid="uid://ts3noii22vsp" path="res://res/sprites/battle/новое окно боя.png" id="1_lguwh"]
+[ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/arena.gd" id="1_t4gay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y61tp"]
+size = Vector2(1073, 516)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_t4gay")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.58, 0.62)
+texture = ExtResource("1_lguwh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(-520, 258, 520, 258, 529, 248, 538, 238, 538, -238, 529, -248, 520, -258, -520, -258, -529, -248, -538, -238, -538, 238, -529, 248, -520, 258, -538, 277, -538, 268, -548, 268, -548, 258, -557, 258, -557, -258, -547, -258, -547, -268, -538, -268, -538, -278, 538, -278, 538, -268, 547, -268, 547, -258, 557, -258, 557, 258, 548, 258, 548, 268, 538, 268, 538, 278, -538, 277)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_y61tp")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

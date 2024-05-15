@@ -13,13 +13,14 @@ var health = Health.new()
 func _ready():
 	if !GlobalInfo.current_mob_health:
 		GlobalInfo.current_mob_health = GlobalInfo.slimeHealth
-	else:
-		GlobalInfo.current_mob_health = 5
+	#else:
+		#print(GlobalInfo.current_mob_health)
 	#GlobalInfo.current_mob_health = GlobalInfo.slimeHealth
 	health.maxHealth = GlobalInfo.slimeHealth
 	#health.health = GlobalInfo.slimeHealth
 	health.health = GlobalInfo.current_mob_health
-	#print(GlobalInfo.current_mob_health)
+	
+	print(GlobalInfo.current_mob_health)
 
 #функция для всех врагов чтобы наносить урон
 func hit(attack_damage):
@@ -29,6 +30,7 @@ func hit(attack_damage):
 	
 	#health.health = hp.damage(health.health,dmg)
 	health.health = hp.damage(health.health,attack_damage) #нанесение урона и возвращение хп
+	GlobalInfo.current_mob_health = health.health
 	global_position = Vector2(randf_range(700,1200),randf_range(400,700))
 	#print("Taken " + str(dmg) + " damage")
 	print("Health after damage: " + str(health.health) +"\n")

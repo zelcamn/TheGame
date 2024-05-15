@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://taryb7hgjwyc"]
+[gd_scene load_steps=14 format=3 uid="uid://taryb7hgjwyc"]
 
 [ext_resource type="Script" path="res://TEST1.gd" id="1_tbu3q"]
 [ext_resource type="Texture2D" uid="uid://bb6vhnitigd4l" path="res://res/sprites/battle/фон.png" id="2_etyf1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dl8b0b50yxji5" path="res://res/sprites/battle/3.1.png" id="8_mrigc"]
 [ext_resource type="Texture2D" uid="uid://cypy4fvr4q87u" path="res://res/sprites/battle/3.2.png" id="9_c6q2w"]
 [ext_resource type="Texture2D" uid="uid://be2ajjmvl1pgt" path="res://res/sprites/battle/4.2.png" id="9_cx1v7"]
+[ext_resource type="PackedScene" uid="uid://cksm6dpaxtuxm" path="res://gameFiles/battle_scenes/arena.tscn" id="13_qh1ie"]
 
 [node name="TEST1" type="Node2D"]
 script = ExtResource("1_tbu3q")
@@ -22,15 +23,17 @@ scale = Vector2(0.996354, 0.994444)
 texture = ExtResource("2_etyf1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(960, 550)
 scale = Vector2(0.578613, 0.622864)
 texture = ExtResource("3_l70lc")
 
 [node name="defense" type="TextureButton" parent="."]
-offset_left = 950.0
-offset_top = 880.0
-offset_right = 1250.0
-offset_bottom = 1030.0
+offset_left = 1540.0
+offset_top = 400.0
+offset_right = 1840.0
+offset_bottom = 550.0
+scale = Vector2(1.01822, 1)
 toggle_mode = true
 button_group = ExtResource("4_sgee6")
 texture_normal = ExtResource("8_mrigc")
@@ -39,10 +42,10 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="heal" type="TextureButton" parent="."]
-offset_left = 1250.0
-offset_top = 880.0
-offset_right = 1550.0
-offset_bottom = 1030.0
+offset_left = 1540.0
+offset_top = 700.0
+offset_right = 1840.0
+offset_bottom = 850.0
 toggle_mode = true
 button_group = ExtResource("4_sgee6")
 texture_normal = ExtResource("8_c5w06")
@@ -51,10 +54,10 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Attack x3" type="TextureButton" parent="."]
-offset_left = 650.0
-offset_top = 880.0
-offset_right = 950.0
-offset_bottom = 1030.0
+offset_left = 80.0
+offset_top = 700.0
+offset_right = 380.0
+offset_bottom = 850.0
 toggle_mode = true
 button_group = ExtResource("4_sgee6")
 texture_normal = ExtResource("6_npnfp")
@@ -63,16 +66,20 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Attack x1" type="TextureButton" parent="."]
-offset_left = 350.0
-offset_top = 880.0
-offset_right = 650.0
-offset_bottom = 1030.0
+offset_left = 80.0
+offset_top = 400.0
+offset_right = 380.0
+offset_bottom = 550.0
 toggle_mode = true
 button_group = ExtResource("4_sgee6")
 texture_normal = ExtResource("4_1tti0")
 texture_pressed = ExtResource("5_mwuds")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Area2D" parent="." instance=ExtResource("13_qh1ie")]
+position = Vector2(960, 640)
+scale = Vector2(1, 1.2)
 
 [connection signal="pressed" from="defense" to="." method="_on_defense_pressed"]
 [connection signal="pressed" from="heal" to="." method="_on_heal_pressed"]

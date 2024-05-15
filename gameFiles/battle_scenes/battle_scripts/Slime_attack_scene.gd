@@ -4,8 +4,16 @@ const player_heart_scene = preload("res://gameFiles/battle_scenes/player_heart.t
 const slime_projectile_scene = preload("res://gameFiles/battle_scenes/slime_projectile.tscn")
 # Called when the node enters the scene tree for the first time.
 var player_is_dead : bool
+var projectile_is_denied : bool
+var attackFinished : bool
+
+
+@onready var timer = $Timer
 
 func _ready():
+	timer.start()
+	EventBus.connect("attack_is_finished", finish_sign)
+	EventBus.connect("projectile_is_denied", projectile_is_denied_sign)
 	EventBus.connect("player_is_dead", player_is_dead_sign)
 	var player_heart = player_heart_scene.instantiate()
 	player_heart.global_position = Vector2(960,540)
@@ -15,11 +23,6 @@ func _ready():
 func _process(delta):
 	if player_is_dead:
 		get_tree().quit()
-	if Input.is_action_just_pressed("ui_accept"):
-		var i = 0
-		while i < 2000:
-			create_slime_projectile(Vector2(50+i,0),-90,Vector2(0,1))
-			i += 200 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func create_slime_projectile(pos,rot,dir):
@@ -31,6 +34,43 @@ func create_slime_projectile(pos,rot,dir):
 
 	add_child(slime_projectile) 
 	
+func slime_attack_patern_1():
+	var slime_projectile = slime_projectile_scene.instantiate()
+	var i = 0
+	
+	while i < 960:
+		create_slime_projectile(Vector2(520+i,290),-90,Vector2(0,1))
+		i += 125
+		 
+		
+	await get_tree().create_timer(1.5).timeout	
+	i = 0	
+	
+	while i < 625:
+		create_slime_projectile(Vector2(1540,400+i),0,Vector2(-1.5,0))
+		i += 125
+	
+	await get_tree().create_timer(2.5).timeout
+	attackFinished = true
+	if_finished()
+	#projectile_is_denied = false
+	
 func player_is_dead_sign():
 	player_is_dead = true
 
+func projectile_is_denied_sign():
+	projectile_is_denied = true
+	
+func finish_sign():
+	attackFinished = false
+	
+func if_finished():
+	if attackFinished:
+		get_tree().change_scene_to_file("res://gameFiles/battle_scenes/test_1.tscn")
+		attackFinished = false
+
+
+
+
+func _on_timer_timeout():
+	slime_attack_patern_1() # Replace with function body.

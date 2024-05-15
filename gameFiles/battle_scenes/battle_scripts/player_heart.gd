@@ -2,15 +2,18 @@ extends CharacterBody2D
 
 @export var hp : attack_component
 
+@onready var axis = Vector2.ZERO
+
 var health = Health.new()
 
 var speed = GlobalInfo.playerSpeed * 2
+var acceleration = 15000
+var friction = 12000
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if !GlobalInfo.current_player_health:
 		GlobalInfo.current_player_health = GlobalInfo.playerHealth
-	else:
-		GlobalInfo.current_player_health = 5
+
 	#GlobalInfo.current_mob_health = GlobalInfo.slimeHealth
 	health.maxHealth = GlobalInfo.playerHealth
 	#health.health = GlobalInfo.slimeHealth
@@ -19,20 +22,32 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	move(delta)
 	
-	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("moveDown"):
-		velocity.y += 1
-	if Input.is_action_pressed("moveUp"):
-		velocity.y -= 1
-	if Input.is_action_pressed("moveLeft"):
-		velocity.x -= 1
-	if Input.is_action_pressed("moveRight"):
-		velocity.x += 1
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+func get_input_velocity():
+	axis.x = int(Input.is_action_pressed("moveRight")) - int(Input.is_action_pressed("moveLeft"))
+	axis.y = int(Input.is_action_pressed("moveDown")) - int(Input.is_action_pressed("moveUp"))
+	return axis.normalized()
+
+func move(delta):
+	axis = get_input_velocity()
+	
+	if axis == Vector2.ZERO:
+		apply_friction(friction*delta)
+	else:
+		apply_movement(axis * acceleration * delta)
+	move_and_slide()
+
+func apply_friction(amount):
+	if velocity.length() > amount:
+		velocity -= velocity.normalized() * amount
 		
-	position += velocity * delta
+	else:
+		velocity = Vector2.ZERO
+
+func apply_movement(accel):
+	velocity += accel
+	velocity = velocity.limit_length(speed)
 
 func hit(attack_damage):
 	#hp.damage(health.health,dmg)
@@ -41,6 +56,7 @@ func hit(attack_damage):
 	
 	#health.health = hp.damage(health.health,dmg)
 	health.health = hp.damage(health.health,attack_damage) #нанесение урона и возвращение хп
+	GlobalInfo.current_player_health = health.health
 	#print("Taken " + str(dmg) + " damage")
 	print("Health after damage: " + str(health.health) +"\n")
 	return health.health

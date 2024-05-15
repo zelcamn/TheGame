@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://db72sem40kfue"]
+[gd_scene load_steps=7 format=3 uid="uid://db72sem40kfue"]
 
-[ext_resource type="Texture2D" uid="uid://dn255w3dn3jkt" path="res://res/sprites/tempSprites/959f410ae763a91.png" id="1_175oq"]
 [ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/slime_projectile.gd" id="1_xgw25"]
+[ext_resource type="Texture2D" uid="uid://bww7uv3h6rysd" path="res://res/sprites/battle/Slime-attack1.png" id="2_mbct4"]
+[ext_resource type="Texture2D" uid="uid://c4hex5ok3h06f" path="res://res/sprites/battle/Slime-attack2.png" id="3_bqtoq"]
+[ext_resource type="Texture2D" uid="uid://dv4rx7tu0rt4s" path="res://res/sprites/tempSprites/Quest_Ausrufezeichen.webp" id="4_x8gai"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y4dp7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_175oq")
+"texture": ExtResource("2_mbct4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bqtoq")
 }],
 "loop": true,
 "name": &"default",
@@ -19,12 +24,21 @@ radius = 38.0
 height = 76.0
 
 [node name="slime_projectile" type="CharacterBody2D"]
-position = Vector2(400, 200)
+light_mask = 2
+visibility_layer = 2
+position = Vector2(200, 200)
+scale = Vector2(0.5, 0.5)
+collision_layer = 5
+collision_mask = 5
+safe_margin = 0.001
 script = ExtResource("1_xgw25")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.19469, 0.217857)
+visible = false
+position = Vector2(-1.00001, -2.5)
+scale = Vector2(2.72414, 3.66667)
 sprite_frames = SubResource("SpriteFrames_y4dp7")
+autoplay = "default"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-1, -2)
@@ -35,4 +49,15 @@ position = Vector2(-42, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_pdf10")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-162.599, -4.72475)
+rotation = 1.5708
+scale = Vector2(0.386202, 0.185151)
+texture = ExtResource("4_x8gai")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
