@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhgj4dpn7bvug"]
+[gd_scene load_steps=11 format=3 uid="uid://dhgj4dpn7bvug"]
 
 [ext_resource type="Texture2D" uid="uid://bduhm8kljtvs1" path="res://res/sprites/tilesets/tileset_test.png" id="1_8ovwd"]
+[ext_resource type="Script" path="res://gameFiles/scenes/dev_scene.gd" id="1_b48hu"]
 [ext_resource type="PackedScene" uid="uid://br0mek24tjxjd" path="res://gameFiles/player/player.tscn" id="1_cbxf1"]
 [ext_resource type="PackedScene" uid="uid://1r63h0pkciim" path="res://gameFiles/scenes/base_entity.tscn" id="2_yga1o"]
 [ext_resource type="Resource" uid="uid://872ip71vypbt" path="res://gameFiles/resources/test_resources/get_player_hp.tres" id="3_m0c4i"]
@@ -55,6 +56,7 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_dy5wq")
 
 [node name="DevScene" type="Node2D"]
+script = ExtResource("1_b48hu")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
