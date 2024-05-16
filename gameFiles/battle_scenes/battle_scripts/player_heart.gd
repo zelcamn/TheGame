@@ -11,13 +11,14 @@ var acceleration = 15000
 var friction = 12000
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if !GlobalInfo.current_player_health:
-		GlobalInfo.current_player_health = GlobalInfo.playerHealth
+	#if !GlobalInfo.current_player_health:
+	#	GlobalInfo.current_player_health = GlobalInfo.playerHealth
 
 	#GlobalInfo.current_mob_health = GlobalInfo.slimeHealth
 	health.maxHealth = GlobalInfo.playerHealth
 	#health.health = GlobalInfo.slimeHealth
 	health.health = GlobalInfo.current_player_health
+	#health.health = GlobalInfo.get_player_hp()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,7 +54,7 @@ func hit(attack_damage):
 	#hp.damage(health.health,dmg)
 	hp.damage(health.health,attack_damage)
 	print("Current health: " + str(health.health))
-	
+	#GlobalInfo.set_player_hp(health.health - attack_damage)
 	#health.health = hp.damage(health.health,dmg)
 	health.health = hp.damage(health.health,attack_damage) #нанесение урона и возвращение хп
 	GlobalInfo.current_player_health = health.health
