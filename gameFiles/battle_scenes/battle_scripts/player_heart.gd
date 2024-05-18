@@ -16,14 +16,11 @@ var block_damage : bool
 @onready var block_timer = $Timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#if !GlobalInfo.current_player_health:
-	#	GlobalInfo.current_player_health = GlobalInfo.playerHealth
+
 	EventBus.connect("damage_is_taken", damage_is_taken_sign)
-	#GlobalInfo.current_mob_health = GlobalInfo.slimeHealth
 	health.maxHealth = GlobalInfo.playerHealth
-	#health.health = GlobalInfo.slimeHealth
 	health.health = GlobalInfo.current_player_health
-	#health.health = GlobalInfo.get_player_hp()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,14 +33,7 @@ func hit_coldown():
 		GlobalInfo.has_no_timers = false
 		block_damage = true
 		block_timer.start()
-		var k = 0
-		while k < 3:
-			$AnimatedSprite2D.modulate = Color.RED
-			await get_tree().create_timer(0.1).timeout
-			$AnimatedSprite2D.modulate = Color.WHITE
-			await get_tree().create_timer(0.05).timeout
-			k += 1
-		#await get_tree().create_timer(0.3).timeout
+		GlobalInfo.sprite_flash($AnimatedSprite2D)
 		damage_is_taken = false
 		
 func get_input_velocity():
@@ -98,3 +88,5 @@ func damage_is_taken_sign():
 func _on_timer_timeout():
 	block_damage = false 
 	GlobalInfo.has_no_timers = true# Replace with function body.
+	
+

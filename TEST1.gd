@@ -21,13 +21,13 @@ func _ready():
 func _process(delta):
 	if_turn_finished()
 	if enemy_is_dead:
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://gameFiles/scenes/dev_scene.tscn")
 		enemy_is_dead = false
 
 func if_turn_finished():
 	if turnFinished and GlobalInfo.has_no_timers == true:
-		if !(GlobalInfo.attack_x3_coldown < 1):
-			GlobalInfo.attack_x3_coldown -= 1
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://gameFiles/battle_scenes/slime_attack_scene.tscn")
 		turnFinished = false
 
@@ -48,13 +48,14 @@ func _on_attack_x_3_pressed():
 		#$"Attack x1".release_focus()
 	block_buttons(true)
 	EventBus.emit_signal("attack_is_pressed")
-	GlobalInfo.attack_x3_coldown = 4
+	GlobalInfo.attack_x3_coldown = 3
 	
 	
 
 func attack_x3_on_coldown():
 	if GlobalInfo.attack_x3_coldown > 0:
 		$"Attack x3".disabled = true
+		GlobalInfo.attack_x3_coldown -= 1
 	
 		
 func _on_defense_pressed():

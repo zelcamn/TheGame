@@ -24,15 +24,18 @@ func _ready():
 
 #функция для всех врагов чтобы наносить урон
 func hit(attack_damage):
-	#hp.damage(health.health,dmg)
+	
 	hp.damage(health.health,attack_damage)
 	print("Current health: " + str(health.health))
 	
-	#health.health = hp.damage(health.health,dmg)
+
+	
 	health.health = hp.damage(health.health,attack_damage) #нанесение урона и возвращение хп
 	GlobalInfo.current_mob_health = health.health
+	
+	await GlobalInfo.sprite_flash($Sprite2D)
 	global_position = Vector2(randf_range(800,1070),randf_range(850,600))
-	#print("Taken " + str(dmg) + " damage")
+	
 	print("Health after damage: " + str(health.health) +"\n")
 	return health.health
 	

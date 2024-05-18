@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://taryb7hgjwyc"]
+[gd_scene load_steps=17 format=3 uid="uid://taryb7hgjwyc"]
 
 [ext_resource type="Script" path="res://TEST1.gd" id="1_tbu3q"]
 [ext_resource type="Texture2D" uid="uid://bxn7low2b6ebs" path="res://res/sprites/battle/1678184377_bogatyr-club-p-pikselnaya-trava-foni-pinterest-16.png" id="3_5ib3w"]
@@ -7,25 +7,26 @@
 [ext_resource type="Texture2D" uid="uid://c1bqwgx0bg8ea" path="res://res/sprites/battle/1.2.png" id="5_mwuds"]
 [ext_resource type="Texture2D" uid="uid://diaieaa2ib5xx" path="res://res/sprites/battle/2.1.png" id="6_npnfp"]
 [ext_resource type="Texture2D" uid="uid://cm4c526libdkb" path="res://res/sprites/battle/2.2.png" id="7_7eokd"]
-[ext_resource type="Texture2D" path="res://res/sprites/battle/кнопка блока.png" id="7_yqq88"]
+[ext_resource type="Texture2D" uid="uid://db5ktoaoghydu" path="res://res/sprites/battle/кнопка блока.png" id="7_yqq88"]
 [ext_resource type="Texture2D" uid="uid://bw3x57xtltthv" path="res://res/sprites/battle/4.1.png" id="8_c5w06"]
 [ext_resource type="Texture2D" uid="uid://dl8b0b50yxji5" path="res://res/sprites/battle/3.1.png" id="8_mrigc"]
 [ext_resource type="Texture2D" uid="uid://cypy4fvr4q87u" path="res://res/sprites/battle/3.2.png" id="9_c6q2w"]
 [ext_resource type="Texture2D" uid="uid://be2ajjmvl1pgt" path="res://res/sprites/battle/4.2.png" id="9_cx1v7"]
 [ext_resource type="PackedScene" uid="uid://cksm6dpaxtuxm" path="res://gameFiles/battle_scenes/arena.tscn" id="13_qh1ie"]
 [ext_resource type="Texture2D" uid="uid://ptp3eqw06jmy" path="res://res/sprites/battle/slime1.png" id="14_g72ra"]
+[ext_resource type="PackedScene" uid="uid://7ikxaa1bj5qr" path="res://gameFiles/battle_scenes/slime_health_bar.tscn" id="15_mvf18"]
+[ext_resource type="PackedScene" uid="uid://bol6nf75c6pv8" path="res://gameFiles/battle_scenes/player_health_bar.tscn" id="16_715rf"]
 
 [node name="TEST1" type="Node2D"]
 script = ExtResource("1_tbu3q")
 
 [node name="Area2D" parent="." instance=ExtResource("13_qh1ie")]
-position = Vector2(960, 699)
-scale = Vector2(1.003, 1)
+position = Vector2(960, 703)
+scale = Vector2(1.008, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visibility_layer = 2
 position = Vector2(960, 540)
-scale = Vector2(0.996354, 0.994444)
 texture = ExtResource("3_5ib3w")
 
 [node name="defense" type="TextureButton" parent="."]
@@ -95,6 +96,12 @@ texture_filter = 1
 position = Vector2(955.5, 696)
 scale = Vector2(12, 12)
 texture = ExtResource("14_g72ra")
+
+[node name="player_health_bar" parent="." instance=ExtResource("16_715rf")]
+position = Vector2(1570, 1000)
+
+[node name="slime_health_bar" parent="." instance=ExtResource("15_mvf18")]
+position = Vector2(80, 1000)
 
 [connection signal="pressed" from="defense" to="." method="_on_defense_pressed"]
 [connection signal="pressed" from="heal" to="." method="_on_heal_pressed"]

@@ -25,3 +25,12 @@ res://gameFiles/player/systems/inventory/item_ui.gd
 res://gameFiles/player/PlayerController.gd
 res://gameFiles/player/systems/inventory/items/customResources/test_effects/set_player_hp.gd
 res://gameFiles/battle_scenes/battle_scripts/slash_line.gd
+res://gameFiles/battle_scenes/ShaderGlobalsOverride.gd
+res://gameFiles/battle_scenes/battle_scripts/HealthBar.gd
+res://gameFiles/battle_scenes/health_bar.tscn
+res://gameFiles/battle_scenes/battle_scripts/HealthBar2.gd
+res://gameFiles/battle_scenes/health_bar_2.tscn
+res://gameFiles/battle_scenes/health_bar.gd
+res://gameFiles/battle_scenes/battle_scripts/slime_health_bar.gd
+res://gameFiles/battle_scenes/slime_health_bar.tscn
+res://gameFiles/battle_scenes/player_health_bar.tscn

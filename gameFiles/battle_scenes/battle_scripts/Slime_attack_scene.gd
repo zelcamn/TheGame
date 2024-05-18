@@ -52,12 +52,12 @@ func slime_attack_patern_1():
 	i = 0	
 	j = 0
 	while i < 500:
-		create_slime_projectile(Vector2(1540,505+i),0,Vector2(-1.5,0))
-		i += 125
+		create_slime_projectile(Vector2(1540,500+i),0,Vector2(-1.5,0))
+		i += 135
 	
 	while j < 375:
-		create_slime_projectile(Vector2(380,567.5+j),180,Vector2(1.5,0))
-		j += 125
+		create_slime_projectile(Vector2(380,562.5+j),180,Vector2(1.5,0))
+		j += 135
 	
 	await get_tree().create_timer(2.5).timeout
 	attackFinished = true
