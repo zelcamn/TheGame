@@ -36,3 +36,7 @@ shape = SubResource("CircleShape2D_xpgda")
 
 [node name="attack_component" parent="." instance=ExtResource("2_mjtc4")]
 position = Vector2(0, 2)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

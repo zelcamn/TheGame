@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7ae82kihyk5w"]
 
 [ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/slime_core.gd" id="1_gexad"]
-[ext_resource type="Texture2D" uid="uid://m0oeimksrslr" path="res://res/sprites/battle/Slime-core.png" id="2_0l32g"]
+[ext_resource type="Texture2D" uid="uid://cqjrc0wngwh4a" path="res://res/sprites/battle/crystal.png" id="2_kx8p3"]
 [ext_resource type="PackedScene" uid="uid://h2gkpi2324v8" path="res://gameFiles/battle_scenes/attack_component.tscn" id="3_u0d0u"]
 
 [node name="slime_core" type="CharacterBody2D" node_paths=PackedStringArray("hp")]
@@ -9,12 +9,13 @@ script = ExtResource("1_gexad")
 hp = NodePath("attack_component")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.999999, 8.5)
-scale = Vector2(1.0625, 1.28906)
-texture = ExtResource("2_0l32g")
+position = Vector2(0.999999, 0.576115)
+scale = Vector2(1.5, 1.46321)
+texture = ExtResource("2_kx8p3")
 
 [node name="attack_component" parent="." instance=ExtResource("3_u0d0u")]
 position = Vector2(0, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-9, -68, 11, -57, 45, -49, 57, -24, 67, 7, 66, 22, 21, 60, -35, 60, -65, 23, -57, -11, -31, -49)
+visible = false
+polygon = PackedVector2Array(-16, -53, 11, -67, 38, -47, 57, -7, 65, 25, 64, 43, 23, 67, -42, 65, -63, 45, -64, 5, -57, -11)

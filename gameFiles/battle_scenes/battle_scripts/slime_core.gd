@@ -31,7 +31,7 @@ func hit(attack_damage):
 	#health.health = hp.damage(health.health,dmg)
 	health.health = hp.damage(health.health,attack_damage) #нанесение урона и возвращение хп
 	GlobalInfo.current_mob_health = health.health
-	global_position = Vector2(randf_range(700,1200),randf_range(400,700))
+	global_position = Vector2(randf_range(800,1070),randf_range(850,600))
 	#print("Taken " + str(dmg) + " damage")
 	print("Health after damage: " + str(health.health) +"\n")
 	return health.health

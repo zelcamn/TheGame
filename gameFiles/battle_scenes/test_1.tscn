@@ -1,85 +1,100 @@
-[gd_scene load_steps=14 format=3 uid="uid://taryb7hgjwyc"]
+[gd_scene load_steps=15 format=3 uid="uid://taryb7hgjwyc"]
 
 [ext_resource type="Script" path="res://TEST1.gd" id="1_tbu3q"]
-[ext_resource type="Texture2D" uid="uid://bb6vhnitigd4l" path="res://res/sprites/battle/фон.png" id="2_etyf1"]
-[ext_resource type="Texture2D" uid="uid://dmqy14yuorje2" path="res://res/sprites/battle/Окно боя 1.1.png" id="3_l70lc"]
+[ext_resource type="Texture2D" uid="uid://bxn7low2b6ebs" path="res://res/sprites/battle/1678184377_bogatyr-club-p-pikselnaya-trava-foni-pinterest-16.png" id="3_5ib3w"]
 [ext_resource type="Texture2D" uid="uid://dagqbppf8if4e" path="res://res/sprites/battle/1.1.png" id="4_1tti0"]
 [ext_resource type="ButtonGroup" uid="uid://c6u25hjuqol7v" path="res://gameFiles/battle_scenes/battle_buttons/buttle_buttons.tres" id="4_sgee6"]
 [ext_resource type="Texture2D" uid="uid://c1bqwgx0bg8ea" path="res://res/sprites/battle/1.2.png" id="5_mwuds"]
 [ext_resource type="Texture2D" uid="uid://diaieaa2ib5xx" path="res://res/sprites/battle/2.1.png" id="6_npnfp"]
 [ext_resource type="Texture2D" uid="uid://cm4c526libdkb" path="res://res/sprites/battle/2.2.png" id="7_7eokd"]
+[ext_resource type="Texture2D" path="res://res/sprites/battle/кнопка блока.png" id="7_yqq88"]
 [ext_resource type="Texture2D" uid="uid://bw3x57xtltthv" path="res://res/sprites/battle/4.1.png" id="8_c5w06"]
 [ext_resource type="Texture2D" uid="uid://dl8b0b50yxji5" path="res://res/sprites/battle/3.1.png" id="8_mrigc"]
 [ext_resource type="Texture2D" uid="uid://cypy4fvr4q87u" path="res://res/sprites/battle/3.2.png" id="9_c6q2w"]
 [ext_resource type="Texture2D" uid="uid://be2ajjmvl1pgt" path="res://res/sprites/battle/4.2.png" id="9_cx1v7"]
 [ext_resource type="PackedScene" uid="uid://cksm6dpaxtuxm" path="res://gameFiles/battle_scenes/arena.tscn" id="13_qh1ie"]
+[ext_resource type="Texture2D" uid="uid://ptp3eqw06jmy" path="res://res/sprites/battle/slime1.png" id="14_g72ra"]
 
 [node name="TEST1" type="Node2D"]
 script = ExtResource("1_tbu3q")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(962, 541)
-scale = Vector2(0.996354, 0.994444)
-texture = ExtResource("2_etyf1")
+[node name="Area2D" parent="." instance=ExtResource("13_qh1ie")]
+position = Vector2(960, 699)
+scale = Vector2(1.003, 1)
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(960, 550)
-scale = Vector2(0.578613, 0.622864)
-texture = ExtResource("3_l70lc")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(960, 540)
+scale = Vector2(0.996354, 0.994444)
+texture = ExtResource("3_5ib3w")
 
 [node name="defense" type="TextureButton" parent="."]
 offset_left = 1540.0
-offset_top = 400.0
+offset_top = 500.0
 offset_right = 1840.0
-offset_bottom = 550.0
+offset_bottom = 650.0
 scale = Vector2(1.01822, 1)
 toggle_mode = true
 button_group = ExtResource("4_sgee6")
 texture_normal = ExtResource("8_mrigc")
 texture_pressed = ExtResource("9_c6q2w")
+texture_disabled = ExtResource("7_yqq88")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="heal" type="TextureButton" parent="."]
 offset_left = 1540.0
-offset_top = 700.0
+offset_top = 750.0
 offset_right = 1840.0
-offset_bottom = 850.0
+offset_bottom = 900.0
 toggle_mode = true
 button_group = ExtResource("4_sgee6")
 texture_normal = ExtResource("8_c5w06")
 texture_pressed = ExtResource("9_cx1v7")
+texture_disabled = ExtResource("7_yqq88")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Attack x3" type="TextureButton" parent="."]
 offset_left = 80.0
-offset_top = 700.0
+offset_top = 750.0
 offset_right = 380.0
-offset_bottom = 850.0
+offset_bottom = 900.0
 toggle_mode = true
 button_group = ExtResource("4_sgee6")
 texture_normal = ExtResource("6_npnfp")
 texture_pressed = ExtResource("7_7eokd")
+texture_disabled = ExtResource("7_yqq88")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Attack x1" type="TextureButton" parent="."]
 offset_left = 80.0
-offset_top = 400.0
+offset_top = 500.0
 offset_right = 380.0
-offset_bottom = 550.0
+offset_bottom = 650.0
 toggle_mode = true
 button_group = ExtResource("4_sgee6")
 texture_normal = ExtResource("4_1tti0")
 texture_pressed = ExtResource("5_mwuds")
+texture_disabled = ExtResource("7_yqq88")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Area2D" parent="." instance=ExtResource("13_qh1ie")]
-position = Vector2(960, 640)
-scale = Vector2(1, 1.2)
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.658824)
+texture_filter = 1
+position = Vector2(955.5, 696)
+scale = Vector2(12, 12)
+texture = ExtResource("14_g72ra")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.419608)
+top_level = true
+texture_filter = 1
+position = Vector2(955.5, 696)
+scale = Vector2(12, 12)
+texture = ExtResource("14_g72ra")
 
 [connection signal="pressed" from="defense" to="." method="_on_defense_pressed"]
 [connection signal="pressed" from="heal" to="." method="_on_heal_pressed"]

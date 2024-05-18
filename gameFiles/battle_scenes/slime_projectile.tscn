@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/slime_projectile.gd" id="1_xgw25"]
 [ext_resource type="Texture2D" uid="uid://bww7uv3h6rysd" path="res://res/sprites/battle/Slime-attack1.png" id="2_mbct4"]
 [ext_resource type="Texture2D" uid="uid://c4hex5ok3h06f" path="res://res/sprites/battle/Slime-attack2.png" id="3_bqtoq"]
-[ext_resource type="Texture2D" uid="uid://dv4rx7tu0rt4s" path="res://res/sprites/tempSprites/Quest_Ausrufezeichen.webp" id="4_x8gai"]
+[ext_resource type="Texture2D" uid="uid://d21e10xtqc12" path="res://res/sprites/tempSprites/стрелка.png" id="5_xjo28"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y4dp7"]
 animations = [{
@@ -49,15 +49,15 @@ position = Vector2(-42, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_pdf10")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-162.599, -4.72475)
-rotation = 1.5708
-scale = Vector2(0.386202, 0.185151)
-texture = ExtResource("4_x8gai")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-150, -4)
+rotation = 3.14159
+scale = Vector2(0.111667, 0.1)
+texture = ExtResource("5_xjo28")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

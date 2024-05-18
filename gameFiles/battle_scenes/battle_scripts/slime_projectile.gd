@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var slime_attack_damage = 10
-@export var speed = 800
+@export var speed = 600
 var direction: Vector2
 @onready var timer = $Timer
 
@@ -37,5 +37,5 @@ func delete_projectiles():
 
 
 func _on_timer_timeout():
-	$Sprite2D.visible = false
+	$Sprite2D3.visible = false
 	start = true

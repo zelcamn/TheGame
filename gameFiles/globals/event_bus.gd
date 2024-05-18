@@ -11,6 +11,7 @@ signal item_unequip(res: Resource)
 signal attack_is_pressed()
 signal turn_is_finished()
 signal projectile_is_denied()
+signal damage_is_taken()
 
 signal enemy_is_dead()
 signal player_is_dead()

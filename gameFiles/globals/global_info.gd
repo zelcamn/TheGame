@@ -4,6 +4,7 @@ var playerSpeed = 300
 var playerHealth = 100
 @export var current_player_health : int
 var playerBaseDamage = 5
+var player_shield : int
 
 #параметры мобов
 var slimeHealth = 20
@@ -17,7 +18,12 @@ var isInventoryActive = false
 
 var current_id = 0
 
+var attack_x3_coldown : int
 
+var has_no_timers := true
+
+func reset_coldowns():
+	attack_x3_coldown = 0
 
 func get_new_id():
 	var result = current_id

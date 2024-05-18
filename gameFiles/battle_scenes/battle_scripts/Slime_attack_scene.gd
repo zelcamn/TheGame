@@ -16,7 +16,7 @@ func _ready():
 	EventBus.connect("projectile_is_denied", projectile_is_denied_sign)
 	EventBus.connect("player_is_dead", player_is_dead_sign)
 	var player_heart = player_heart_scene.instantiate()
-	player_heart.global_position = Vector2(960,540)
+	player_heart.global_position = Vector2(960,700)
 	add_child(player_heart) 
 	
 
@@ -37,18 +37,27 @@ func create_slime_projectile(pos,rot,dir):
 func slime_attack_patern_1():
 	var slime_projectile = slime_projectile_scene.instantiate()
 	var i = 0
+	var j = 0
 	
 	while i < 960:
-		create_slime_projectile(Vector2(520+i,290),-90,Vector2(0,1))
+		create_slime_projectile(Vector2(520+i,400),-90,Vector2(0,1))
 		i += 125
-		 
+		
+	while j < 1125:
+		create_slime_projectile(Vector2(457.5+j,1000),90,Vector2(0,-1))
+		j += 125
 		
 	await get_tree().create_timer(1.5).timeout	
-	i = 0	
 	
-	while i < 625:
-		create_slime_projectile(Vector2(1540,400+i),0,Vector2(-1.5,0))
+	i = 0	
+	j = 0
+	while i < 500:
+		create_slime_projectile(Vector2(1540,505+i),0,Vector2(-1.5,0))
 		i += 125
+	
+	while j < 375:
+		create_slime_projectile(Vector2(380,567.5+j),180,Vector2(1.5,0))
+		j += 125
 	
 	await get_tree().create_timer(2.5).timeout
 	attackFinished = true
@@ -63,9 +72,10 @@ func projectile_is_denied_sign():
 	
 func finish_sign():
 	attackFinished = false
-	
+
 func if_finished():
-	if attackFinished:
+	await get_tree().create_timer(0.5).timeout
+	if attackFinished and GlobalInfo.has_no_timers == true:
 		get_tree().change_scene_to_file("res://gameFiles/battle_scenes/test_1.tscn")
 		attackFinished = false
 

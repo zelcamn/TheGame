@@ -1,25 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://im5ch1y0qcpm"]
 
 [ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/Slime_attack_scene.gd" id="1_xoelx"]
-[ext_resource type="Texture2D" uid="uid://bb6vhnitigd4l" path="res://res/sprites/battle/фон.png" id="2_coy5g"]
 [ext_resource type="PackedScene" uid="uid://cksm6dpaxtuxm" path="res://gameFiles/battle_scenes/arena.tscn" id="3_3ehq8"]
+[ext_resource type="Texture2D" uid="uid://bxn7low2b6ebs" path="res://res/sprites/battle/1678184377_bogatyr-club-p-pikselnaya-trava-foni-pinterest-16.png" id="3_ntj4o"]
 
 [node name="Slime_attack_scene" type="Node2D"]
 script = ExtResource("1_xoelx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(0.996354, 0.994444)
-texture = ExtResource("2_coy5g")
-
 [node name="Area2D" parent="." instance=ExtResource("3_3ehq8")]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(960, 640)
-scale = Vector2(1, 1.2)
+position = Vector2(960, 699)
+scale = Vector2(1.003, 1)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.996354, 0.994444)
+texture = ExtResource("3_ntj4o")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
