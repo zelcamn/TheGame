@@ -8,7 +8,7 @@
 radius = 36.4966
 
 [node name="base_entity" type="StaticBody2D"]
-collision_layer = 3
+collision_layer = 4
 script = ExtResource("1_do0f0")
 resource = ExtResource("2_fyavv")
 

@@ -1,91 +1,71 @@
-[gd_scene load_steps=12 format=3 uid="uid://br0mek24tjxjd"]
+[gd_scene load_steps=8 format=3 uid="uid://br0mek24tjxjd"]
 
 [ext_resource type="Script" path="res://gameFiles/player/PlayerController.gd" id="1_rd8md"]
-[ext_resource type="Texture2D" uid="uid://cc6u8l3outx7p" path="res://res/sprites/player/char_test.png" id="2_rcijj"]
+[ext_resource type="Texture2D" uid="uid://cnu5xd4xao0j6" path="res://res/sprites/player/stop.png" id="2_dcasc"]
+[ext_resource type="Texture2D" uid="uid://dkn3j0ayhrobw" path="res://res/sprites/player/walk.png" id="3_8tsmi"]
 [ext_resource type="PackedScene" uid="uid://cpl7grpuid6sp" path="res://gameFiles/player/systems/inventory/inventory_UI.tscn" id="5_pgo2r"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yqie6"]
-atlas = ExtResource("2_rcijj")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_le18f"]
-atlas = ExtResource("2_rcijj")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ftrra"]
-atlas = ExtResource("2_rcijj")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ww0xh"]
-atlas = ExtResource("2_rcijj")
-region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_811fi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yqie6")
+"texture": ExtResource("2_dcasc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8tsmi")
 }],
 "loop": true,
 "name": &"default",
-"speed": 0.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_le18f")
+"texture": ExtResource("2_dcasc")
 }],
 "loop": true,
 "name": &"stop",
-"speed": 0.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ftrra")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ww0xh")
+"texture": ExtResource("3_8tsmi")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 3.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm14j"]
 
-[sub_resource type="GDScript" id="GDScript_rjaet"]
-script/source = "extends Area2D
-
-
-"
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_4w2lg"]
 radius = 38.3275
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_mask = 8
 script = ExtResource("1_rd8md")
+speed = 100
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(2.84217e-14, -1.19209e-07)
-scale = Vector2(4.51563, 4.51563)
 sprite_frames = SubResource("SpriteFrames_811fi")
-animation = &"walk"
+animation = &"stop"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_jm14j")
 
 [node name="EntityCollision" type="Area2D" parent="."]
-collision_mask = 2
-script = SubResource("GDScript_rjaet")
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntityCollision"]
 shape = SubResource("CircleShape2D_4w2lg")
 
 [node name="inventory_UI" parent="." instance=ExtResource("5_pgo2r")]
 visible = false
+z_index = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="EntityCollision" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="EntityCollision" to="." method="_on_body_exited"]

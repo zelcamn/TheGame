@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://qc80b4fgkij2"]
+
+[ext_resource type="Script" path="res://gameFiles/enemies/basic_enemy.gd" id="1_4o6h3"]
+[ext_resource type="Texture2D" uid="uid://c6ij6v0xnclok" path="res://res/sprites/enemies/base_enemy_idle.png" id="2_8omht"]
+[ext_resource type="Texture2D" uid="uid://c3so3vtoephw2" path="res://res/sprites/enemies/base_enemy_pursue.png" id="3_a7gfy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6j3ow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8omht")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a7gfy")
+}],
+"loop": true,
+"name": &"pursue",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gbe4e"]
+radius = 189.066
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_87c4w"]
+radius = 46.0977
+
+[node name="BasicEnemy" type="Node2D"]
+script = ExtResource("1_4o6h3")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6j3ow")
+animation = &"idle"
+
+[node name="DetectCollisions" type="Area2D" parent="."]
+
+[node name="Detection" type="CollisionShape2D" parent="DetectCollisions"]
+shape = SubResource("CircleShape2D_gbe4e")
+
+[node name="AttackCollisions" type="Area2D" parent="."]
+
+[node name="Attack" type="CollisionShape2D" parent="AttackCollisions"]
+shape = SubResource("CircleShape2D_87c4w")
+
+[connection signal="body_entered" from="DetectCollisions" to="." method="is_player_entered_detection"]
+[connection signal="body_exited" from="DetectCollisions" to="." method="is_player_exited_detection"]
+[connection signal="body_entered" from="AttackCollisions" to="." method="is_player_entered_attack"]

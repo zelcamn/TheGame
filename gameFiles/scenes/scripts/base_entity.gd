@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name BaseEntity
 
 @export var resource: Item
 

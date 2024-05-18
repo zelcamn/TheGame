@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhgj4dpn7bvug"]
+
+[ext_resource type="PackedScene" uid="uid://br0mek24tjxjd" path="res://gameFiles/player/player.tscn" id="1_cbxf1"]
+[ext_resource type="PackedScene" uid="uid://1r63h0pkciim" path="res://gameFiles/scenes/base_entity.tscn" id="2_yga1o"]
+[ext_resource type="Resource" uid="uid://872ip71vypbt" path="res://gameFiles/resources/test_resources/get_player_hp.tres" id="3_m0c4i"]
+[ext_resource type="Resource" uid="uid://di2s5e4u4wb87" path="res://gameFiles/resources/test_resources/test_cons2.tres" id="3_n7ur3"]
+[ext_resource type="Resource" uid="uid://b30sc7sf1vck1" path="res://gameFiles/resources/test_resources/get_player_weapon.tres" id="3_wuw8y"]
+[ext_resource type="Resource" uid="uid://dnnhmygg3nae5" path="res://gameFiles/resources/test_resources/set_player_hp.tres" id="5_v22dc"]
+[ext_resource type="PackedScene" uid="uid://qc80b4fgkij2" path="res://gameFiles/enemies/basic_enemy.tscn" id="7_u1yxa"]
+
+[node name="DevScene" type="Node2D"]
+
+[node name="BasicEnemy" parent="." instance=ExtResource("7_u1yxa")]
+position = Vector2(-188, 213)
+
+[node name="base_entity" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(89, 181)
+
+[node name="base_entity2" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(551, 186)
+resource = ExtResource("3_n7ur3")
+
+[node name="base_entity4" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(156, 374)
+resource = ExtResource("3_m0c4i")
+
+[node name="base_entity3" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(345, 413)
+resource = ExtResource("3_wuw8y")
+
+[node name="base_entity5" parent="." instance=ExtResource("2_yga1o")]
+position = Vector2(592, 383)
+resource = ExtResource("5_v22dc")
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_cbxf1")]
+position = Vector2(292, 170)
