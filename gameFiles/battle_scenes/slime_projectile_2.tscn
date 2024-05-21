@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2hacpilpx5ig"]
+
+[ext_resource type="Texture2D" uid="uid://c35bc58o16jd3" path="res://res/sprites/battle/slimeblob_falling.png" id="1_nhl4r"]
+[ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/slime_projectile_2.gd" id="1_ohsc4"]
+[ext_resource type="Texture2D" uid="uid://brxhv7qf1amvk" path="res://res/sprites/battle/slimeblob_is_fallen.png" id="2_mnsbk"]
+[ext_resource type="Texture2D" uid="uid://bqd17voqs57qd" path="res://res/sprites/tempSprites/oval1.png" id="3_6ax13"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_noysy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nhl4r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_o0ecs"]
+resource_name = "new_animation"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(40, -100), Vector2(5, -20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hxvm"]
+_data = {
+"new_animation": SubResource("Animation_o0ecs")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+top_level = true
+scale = Vector2(2, 2)
+script = ExtResource("1_ohsc4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(40, -100)
+sprite_frames = SubResource("SpriteFrames_noysy")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-386, -288)
+polygon = PackedVector2Array(405.5, 286, 408, 286.5, 414, 288, 414, 290, 362, 290, 362, 288, 366, 287, 382.5, 285.5)
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+visible = false
+texture_filter = 1
+position = Vector2(2, -9)
+texture = ExtResource("2_mnsbk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.941176, 0, 0.196078, 0.784314)
+texture_filter = 1
+position = Vector2(1.63204, 0.5)
+scale = Vector2(0.133744, 0.0383182)
+skew = 0.938987
+texture = ExtResource("3_6ax13")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_4hxvm")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

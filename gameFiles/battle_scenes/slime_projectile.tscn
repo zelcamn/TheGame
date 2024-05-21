@@ -35,14 +35,15 @@ script = ExtResource("1_xgw25")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
+texture_filter = 1
 position = Vector2(-1.00001, -2.5)
 scale = Vector2(2.72414, 3.66667)
 sprite_frames = SubResource("SpriteFrames_y4dp7")
 autoplay = "default"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-1, -2)
-scale = Vector2(7.85, 3.85)
+position = Vector2(-41.75, -3.99999)
+scale = Vector2(3.775, 3.8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-42, -4)
@@ -54,6 +55,9 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0.941176, 0, 0.196078, 0.784314)
+self_modulate = Color(1, 1, 1, 0.988235)
+texture_filter = 1
 position = Vector2(-150, -4)
 rotation = 3.14159
 scale = Vector2(0.111667, 0.1)

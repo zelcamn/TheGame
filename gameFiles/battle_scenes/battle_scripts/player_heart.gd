@@ -26,7 +26,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	move(delta)
-	hit_coldown()
+	#hit_coldown()
 	
 func hit_coldown():
 	if damage_is_taken and block_damage == false:
@@ -71,9 +71,12 @@ func hit(attack_damage):
 	
 	if !block_damage and GlobalInfo.player_shield < 1:
 		health.health = hp.damage(health.health,attack_damage) #нанесение урона и возвращение хп
-		
+	hit_coldown()
 	if GlobalInfo.player_shield > 0:
 		GlobalInfo.player_shield -= 1
+	
+	if health.health <= 0:
+		EventBus.emit_signal("player_is_dead")
 	
 	GlobalInfo.current_player_health = health.health
 	

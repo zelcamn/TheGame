@@ -29,59 +29,6 @@ visibility_layer = 2
 position = Vector2(960, 540)
 texture = ExtResource("3_5ib3w")
 
-[node name="defense" type="TextureButton" parent="."]
-offset_left = 1540.0
-offset_top = 500.0
-offset_right = 1840.0
-offset_bottom = 650.0
-scale = Vector2(1.01822, 1)
-toggle_mode = true
-button_group = ExtResource("4_sgee6")
-texture_normal = ExtResource("8_mrigc")
-texture_pressed = ExtResource("9_c6q2w")
-texture_disabled = ExtResource("7_yqq88")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="heal" type="TextureButton" parent="."]
-offset_left = 1540.0
-offset_top = 750.0
-offset_right = 1840.0
-offset_bottom = 900.0
-toggle_mode = true
-button_group = ExtResource("4_sgee6")
-texture_normal = ExtResource("8_c5w06")
-texture_pressed = ExtResource("9_cx1v7")
-texture_disabled = ExtResource("7_yqq88")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Attack x3" type="TextureButton" parent="."]
-offset_left = 80.0
-offset_top = 750.0
-offset_right = 380.0
-offset_bottom = 900.0
-toggle_mode = true
-button_group = ExtResource("4_sgee6")
-texture_normal = ExtResource("6_npnfp")
-texture_pressed = ExtResource("7_7eokd")
-texture_disabled = ExtResource("7_yqq88")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Attack x1" type="TextureButton" parent="."]
-offset_left = 80.0
-offset_top = 500.0
-offset_right = 380.0
-offset_bottom = 650.0
-toggle_mode = true
-button_group = ExtResource("4_sgee6")
-texture_normal = ExtResource("4_1tti0")
-texture_pressed = ExtResource("5_mwuds")
-texture_disabled = ExtResource("7_yqq88")
-ignore_texture_size = true
-stretch_mode = 5
-
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.658824)
 texture_filter = 1
@@ -98,12 +45,73 @@ scale = Vector2(12, 12)
 texture = ExtResource("14_g72ra")
 
 [node name="player_health_bar" parent="." instance=ExtResource("16_715rf")]
-position = Vector2(1570, 1000)
+position = Vector2(1429.4, 922)
+scale = Vector2(1.2, 1.2)
 
 [node name="slime_health_bar" parent="." instance=ExtResource("15_mvf18")]
-position = Vector2(80, 1000)
+texture_filter = 1
+position = Vector2(25, 925)
+scale = Vector2(1.2, 1.2)
 
+[node name="Attack x1" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 80.0
+offset_top = 500.0
+offset_right = 380.0
+offset_bottom = 650.0
+toggle_mode = true
+button_group = ExtResource("4_sgee6")
+texture_normal = ExtResource("4_1tti0")
+texture_pressed = ExtResource("5_mwuds")
+texture_disabled = ExtResource("7_yqq88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Attack x3" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 80.0
+offset_top = 750.0
+offset_right = 380.0
+offset_bottom = 900.0
+toggle_mode = true
+button_group = ExtResource("4_sgee6")
+texture_normal = ExtResource("6_npnfp")
+texture_pressed = ExtResource("7_7eokd")
+texture_disabled = ExtResource("7_yqq88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="defense" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 1540.0
+offset_top = 500.0
+offset_right = 1840.0
+offset_bottom = 650.0
+scale = Vector2(1.01822, 1)
+toggle_mode = true
+button_group = ExtResource("4_sgee6")
+texture_normal = ExtResource("8_mrigc")
+texture_pressed = ExtResource("9_c6q2w")
+texture_disabled = ExtResource("7_yqq88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="heal" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 1540.0
+offset_top = 750.0
+offset_right = 1840.0
+offset_bottom = 900.0
+disabled = true
+toggle_mode = true
+button_group = ExtResource("4_sgee6")
+texture_normal = ExtResource("8_c5w06")
+texture_pressed = ExtResource("9_cx1v7")
+texture_disabled = ExtResource("7_yqq88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Attack x1" to="." method="_on_attack_x1_pressed"]
+[connection signal="pressed" from="Attack x3" to="." method="_on_attack_x_3_pressed"]
 [connection signal="pressed" from="defense" to="." method="_on_defense_pressed"]
 [connection signal="pressed" from="heal" to="." method="_on_heal_pressed"]
-[connection signal="pressed" from="Attack x3" to="." method="_on_attack_x_3_pressed"]
-[connection signal="pressed" from="Attack x1" to="." method="_on_attack_x1_pressed"]

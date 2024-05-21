@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var slime_attack_damage = 10
+
 @export var speed = 600
 var direction: Vector2
 @onready var timer = $Timer
@@ -21,8 +21,7 @@ func _process(delta):
 		if collision:
 			var collider = collision.get_collider()
 			if collider.has_method("hit"):
-				if collider.hit(slime_attack_damage) <= 0:
-					EventBus.emit_signal("player_is_dead")
+				collider.hit(GlobalInfo.slime_attack_damage)
 			queue_free() # Replace with function body.
 		
 			#del()

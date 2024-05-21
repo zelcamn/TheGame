@@ -23,11 +23,14 @@ position = Vector2(960, 540)
 scale = Vector2(0.996354, 0.994444)
 texture = ExtResource("3_ntj4o")
 
-[node name="slime_health_bar" parent="." instance=ExtResource("4_pk1pp")]
-position = Vector2(80, 1000)
+[node name="player_health_bar2" parent="." instance=ExtResource("4_ldq6q")]
+position = Vector2(1429.4, 922)
+scale = Vector2(1.2, 1.2)
 
-[node name="player_health_bar" parent="." instance=ExtResource("4_ldq6q")]
-position = Vector2(1570, 1000)
+[node name="slime_health_bar2" parent="." instance=ExtResource("4_pk1pp")]
+texture_filter = 1
+position = Vector2(25, 925)
+scale = Vector2(1.2, 1.2)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

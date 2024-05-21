@@ -8,7 +8,9 @@ var player_shield : int
 
 #параметры мобов
 var slimeHealth = 20
+var slime_attack_damage = 10
 @export var current_mob_health : int
+
 
 #вспомогательные
 var attack_is_pressed = 0
