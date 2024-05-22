@@ -18,3 +18,5 @@ res://gameFiles/battle_scenes/battle_scripts/core_attack_patern.gd
 res://gameFiles/globals/global_info.gd
 res://gameFiles/battle_scenes/battle_scripts/slash_line.gd
 res://gameFiles/battle_scenes/slash_line.tscn
+res://gameFiles/enemies/basic_enemy.gd
+res://gameFiles/scenes/scripts/dev_scene.gd

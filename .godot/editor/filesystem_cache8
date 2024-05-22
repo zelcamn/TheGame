@@ -1,13 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716367918
+::res://::1716369470
 ART_DESIGN_DOCUMENT.md::TextFile::-1::1716361070::0::1::::<><>::
 DESIGN_DOCUMENT.md::TextFile::-1::1716361070::0::1::::<><>::
 DESIGN_DOCUMENT_COMM.md::TextFile::-1::1716361070::0::1::::<><>::
 icon.svg::CompressedTexture2D::6291276408046514042::1716361070::1716361070::1::::<><>::
 SWOT_ANALYSIS.md::TextFile::-1::1716361070::0::1::::<><>::
-TEST1.gd::GDScript::-1::1716367918::0::1::::<>Node2D<>::
+TEST1.gd::GDScript::-1::1716369470::0::1::::<>Node2D<>::
 ::res://gameFiles/::1716361155
-::res://gameFiles/battle_scenes/::1716368120
+::res://gameFiles/battle_scenes/::1716369470
 arena.tscn::PackedScene::5512672747637474354::1716361155::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/arena.gd<>uid://dwc0pd4ug0sln::::res://res/sprites/battle/pixil-frame-0 (1).png
 attack_component.tscn::PackedScene::547443066195445207::1716361155::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/attack_component.gd
 CanvasModulate.gd::GDScript::-1::1716361155::0::1::::<>CanvasModulate<>::
@@ -15,15 +15,15 @@ core_attack_patern.tscn::PackedScene::4415031813755897132::1716361155::0::1::::<
 health_bar.gd::GDScript::-1::1716361155::0::1::::<>Node2D<>::
 player_health_bar.tscn::PackedScene::3393678405434199935::1716361155::0::1::::<><>::res://gameFiles/battle_scenes/health_bar.gd<>uid://b7ug2f7xrhwed::::res://res/sprites/battle/хп игрока задник.png<>uid://b1qirntbmqfww::::res://res/sprites/battle/image_2024-05-19_00-48-01.png<>uid://cxbvjbxb3hyp6::::res://res/sprites/battle/image_2024-05-21_18-12-28.png<>uid://dn6rk17t35v0r::::res://res/sprites/tempSprites/textures-2d-pixel-heart-1.png
 player_heart.tscn::PackedScene::5278645626982567474::1716361155::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/player_heart.gd<>uid://dn6rk17t35v0r::::res://res/sprites/tempSprites/textures-2d-pixel-heart-1.png<>uid://h2gkpi2324v8::::res://gameFiles/battle_scenes/attack_component.tscn
-slime.tscn::PackedScene::8614776543740953272::1716368120::0::1::::<><>::uid://b7ae82kihyk5w::::res://gameFiles/battle_scenes/slime_core.tscn<>uid://ptp3eqw06jmy::::res://res/sprites/battle/slime1.png
+slime.tscn::PackedScene::8614776543740953272::1716369470::0::1::::<><>::uid://b7ae82kihyk5w::::res://gameFiles/battle_scenes/slime_core.tscn<>uid://ptp3eqw06jmy::::res://res/sprites/battle/slime1.png
 ShaderGlobalsOverride.gd::GDScript::-1::1716361155::0::1::::<>ShaderGlobalsOverride<>::
-slash_line.tscn::PackedScene::9156786153588092117::1716368120::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/slash_line.gd<>uid://bfjg63rkib2k2::::res://res/sprites/battle/Player-attack1.png<>uid://kt2i3wwdspkp::::res://res/sprites/battle/Player-attack2.png<>uid://q0bp74a05v75::::res://res/sprites/battle/Player-attack3.png
+slash_line.tscn::PackedScene::9156786153588092117::1716369470::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/slash_line.gd<>uid://bfjg63rkib2k2::::res://res/sprites/battle/Player-attack1.png<>uid://kt2i3wwdspkp::::res://res/sprites/battle/Player-attack2.png<>uid://q0bp74a05v75::::res://res/sprites/battle/Player-attack3.png
 slime_attack_scene.tscn::PackedScene::588108772476636194::1716368045::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/Slime_attack_scene.gd<>uid://cksm6dpaxtuxm::::res://gameFiles/battle_scenes/arena.tscn<>uid://bxn7low2b6ebs::::res://res/sprites/battle/1678184377_bogatyr-club-p-pikselnaya-trava-foni-pinterest-16.png<>uid://bol6nf75c6pv8::::res://gameFiles/battle_scenes/player_health_bar.tscn<>uid://7ikxaa1bj5qr::::res://gameFiles/battle_scenes/slime_health_bar.tscn
-slime_core.tscn::PackedScene::4632766913232356458::1716368120::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/slime_core.gd<>uid://cqjrc0wngwh4a::::res://res/sprites/battle/crystal.png<>uid://h2gkpi2324v8::::res://gameFiles/battle_scenes/attack_component.tscn
+slime_core.tscn::PackedScene::4632766913232356458::1716369470::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/slime_core.gd<>uid://cqjrc0wngwh4a::::res://res/sprites/battle/crystal.png<>uid://h2gkpi2324v8::::res://gameFiles/battle_scenes/attack_component.tscn
 slime_health_bar.tscn::PackedScene::2263206262820038081::1716361155::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/slime_health_bar.gd<>uid://l8601wo7yikj::::res://res/sprites/battle/хп слайма задник.png<>uid://d2owuobt7hhhm::::res://res/sprites/battle/image_2024-05-21_18-26-00.png<>uid://b7voaklj82m7m::::res://res/sprites/battle/image_2024-05-19_15-42-18 (1).png<>uid://cqjrc0wngwh4a::::res://res/sprites/battle/crystal.png
 slime_projectile.tscn::PackedScene::7297182715924719808::1716361155::0::1::::<><>::res://gameFiles/battle_scenes/battle_scripts/slime_projectile.gd<>uid://bww7uv3h6rysd::::res://res/sprites/battle/Slime-attack1.png<>uid://c4hex5ok3h06f::::res://res/sprites/battle/Slime-attack2.png<>uid://d21e10xtqc12::::res://res/sprites/tempSprites/стрелка.png
 slime_projectile_2.tscn::PackedScene::9068815845901866902::1716361155::0::1::::<><>::uid://c35bc58o16jd3::::res://res/sprites/battle/slimeblob_falling.png<>res://gameFiles/battle_scenes/battle_scripts/slime_projectile_2.gd<>uid://brxhv7qf1amvk::::res://res/sprites/battle/slimeblob_is_fallen.png<>uid://bqd17voqs57qd::::res://res/sprites/tempSprites/oval1.png
-test_1.tscn::PackedScene::1334663179336900114::1716368120::0::1::::<><>::res://TEST1.gd<>uid://bxn7low2b6ebs::::res://res/sprites/battle/1678184377_bogatyr-club-p-pikselnaya-trava-foni-pinterest-16.png<>uid://dagqbppf8if4e::::res://res/sprites/battle/1.1.png<>uid://c1bqwgx0bg8ea::::res://res/sprites/battle/1.2.png<>uid://diaieaa2ib5xx::::res://res/sprites/battle/2.1.png<>uid://cm4c526libdkb::::res://res/sprites/battle/2.2.png<>res://gameFiles/battle_scenes/battle_buttons/Control.gd<>uid://db5ktoaoghydu::::res://res/sprites/battle/кнопка блока.png<>uid://bw3x57xtltthv::::res://res/sprites/battle/4.1.png<>uid://dl8b0b50yxji5::::res://res/sprites/battle/3.1.png<>uid://cypy4fvr4q87u::::res://res/sprites/battle/3.2.png<>uid://be2ajjmvl1pgt::::res://res/sprites/battle/4.2.png<>uid://cksm6dpaxtuxm::::res://gameFiles/battle_scenes/arena.tscn<>uid://7ikxaa1bj5qr::::res://gameFiles/battle_scenes/slime_health_bar.tscn<>uid://bol6nf75c6pv8::::res://gameFiles/battle_scenes/player_health_bar.tscn
+test_1.tscn::PackedScene::1334663179336900114::1716369470::0::1::::<><>::res://TEST1.gd<>uid://bxn7low2b6ebs::::res://res/sprites/battle/1678184377_bogatyr-club-p-pikselnaya-trava-foni-pinterest-16.png<>uid://dagqbppf8if4e::::res://res/sprites/battle/1.1.png<>uid://c1bqwgx0bg8ea::::res://res/sprites/battle/1.2.png<>uid://diaieaa2ib5xx::::res://res/sprites/battle/2.1.png<>uid://cm4c526libdkb::::res://res/sprites/battle/2.2.png<>res://gameFiles/battle_scenes/battle_buttons/Control.gd<>uid://db5ktoaoghydu::::res://res/sprites/battle/кнопка блока.png<>uid://bw3x57xtltthv::::res://res/sprites/battle/4.1.png<>uid://dl8b0b50yxji5::::res://res/sprites/battle/3.1.png<>uid://cypy4fvr4q87u::::res://res/sprites/battle/3.2.png<>uid://be2ajjmvl1pgt::::res://res/sprites/battle/4.2.png<>uid://cksm6dpaxtuxm::::res://gameFiles/battle_scenes/arena.tscn<>uid://7ikxaa1bj5qr::::res://gameFiles/battle_scenes/slime_health_bar.tscn<>uid://bol6nf75c6pv8::::res://gameFiles/battle_scenes/player_health_bar.tscn
 ::res://gameFiles/battle_scenes/battle_buttons/::1716362755
 buttle_buttons.tres::ButtonGroup::6991676390365587633::1716362755::0::1::::<><>::
 Control.gd::GDScript::-1::1716362755::0::1::::<>Control<>::
@@ -41,11 +41,11 @@ slime_health_bar.gd::GDScript::-1::1716361155::0::1::::<>Node2D<>::
 slime_projectile.gd::GDScript::-1::1716361155::0::1::::<>CharacterBody2D<>::
 slime_projectile_2.gd::GDScript::-1::1716361155::0::1::::<>CharacterBody2D<>::
 temp_enemy_attack.gd::GDScript::-1::1716361155::0::1::::<>Node2D<>::
-::res://gameFiles/enemies/::1716368119
-basic_enemy.gd::GDScript::-1::1716361155::0::1::::<>Node2D<>::
-basic_enemy.tscn::PackedScene::1129198656883829373::1716368119::0::1::::<><>::res://gameFiles/enemies/basic_enemy.gd<>uid://c6ij6v0xnclok::::res://res/sprites/enemies/base_enemy_idle.png<>uid://c3so3vtoephw2::::res://res/sprites/enemies/base_enemy_pursue.png
-::res://gameFiles/globals/::1716368119
-event_bus.gd::GDScript::-1::1716364366::0::1::::<>Node<>::
+::res://gameFiles/enemies/::1716369470
+basic_enemy.gd::GDScript::-1::1716368889::0::1::::<>Node2D<>::
+basic_enemy.tscn::PackedScene::1129198656883829373::1716369470::0::1::::<><>::res://gameFiles/enemies/basic_enemy.gd<>uid://c6ij6v0xnclok::::res://res/sprites/enemies/base_enemy_idle.png<>uid://c3so3vtoephw2::::res://res/sprites/enemies/base_enemy_pursue.png
+::res://gameFiles/globals/::1716369470
+event_bus.gd::GDScript::-1::1716369470::0::1::::<>Node<>::
 global_info.gd::GDScript::-1::1716368119::0::1::::<>Node<>::
 global_info.tscn::PackedScene::6844513936466001797::1716361070::0::1::::<><>::
 ::res://gameFiles/player/::1716361164
@@ -82,12 +82,14 @@ set_player_hp.tres::Resource/SetPlayerHP::8099001647792496270::1716361070::0::1:
 test_cons2.tres::Resource/Consumable::7777657735071177286::1716361070::0::1::::<><>::res://gameFiles/player/systems/inventory/items/baseResources/consumable.gd<>uid://be1n62riqnpq2::::res://res/sprites/objects/placeHolder2.png
 test_cons.tres::Resource/baseEffect::7563594145914182752::1716361070::0::1::::<><>::res://gameFiles/player/systems/inventory/items/customResources/consumablesEffects/base_effect.gd<>uid://c1dg7ls1nqrog::::res://res/sprites/objects/placeHolder.png
 test_weapon.tres::Resource/Weapon::9130636933264937320::1716361070::0::1::::<><>::res://gameFiles/player/systems/inventory/items/baseResources/weapon.gd<>uid://c6r4moafqedu1::::res://res/sprites/objects/placeHolder3.png
-::res://gameFiles/scenes/::1716368119
+::res://gameFiles/scenes/::1716369470
 base_entity.tscn::PackedScene::1861936992391499916::1716361164::0::1::::<><>::res://gameFiles/scenes/scripts/base_entity.gd<>uid://df04j436nhyp1::::res://gameFiles/resources/test_resources/test_cons.tres<>uid://c1dg7ls1nqrog::::res://res/sprites/objects/placeHolder.png
 dev_scene.gd::GDScript::-1::1716361155::0::1::::<>Node2D<>::
-dev_scene.tscn::PackedScene::7663568645403632874::1716368119::0::1::::<><>::uid://c1s8mc3ey3q58::::res://gameFiles/tilemaps/tileMapTest.tscn<>uid://br0mek24tjxjd::::res://gameFiles/player/player.tscn<>uid://1r63h0pkciim::::res://gameFiles/scenes/base_entity.tscn<>uid://872ip71vypbt::::res://gameFiles/resources/test_resources/get_player_hp.tres<>uid://di2s5e4u4wb87::::res://gameFiles/resources/test_resources/test_cons2.tres<>uid://b30sc7sf1vck1::::res://gameFiles/resources/test_resources/get_player_weapon.tres<>uid://dnnhmygg3nae5::::res://gameFiles/resources/test_resources/set_player_hp.tres<>uid://qc80b4fgkij2::::res://gameFiles/enemies/basic_enemy.tscn
-::res://gameFiles/scenes/scripts/::1716361164
+dev_scene.tscn::PackedScene::7663568645403632874::1716369470::0::1::::<><>::res://gameFiles/scenes/scripts/dev_scene.gd
+open_world.tscn::PackedScene::812316938094311645::1716369065::0::1::::<><>::uid://c1s8mc3ey3q58::::res://gameFiles/tilemaps/tileMapTest.tscn<>uid://1r63h0pkciim::::res://gameFiles/scenes/base_entity.tscn<>uid://di2s5e4u4wb87::::res://gameFiles/resources/test_resources/test_cons2.tres<>uid://872ip71vypbt::::res://gameFiles/resources/test_resources/get_player_hp.tres<>uid://b30sc7sf1vck1::::res://gameFiles/resources/test_resources/get_player_weapon.tres<>uid://dnnhmygg3nae5::::res://gameFiles/resources/test_resources/set_player_hp.tres<>uid://qc80b4fgkij2::::res://gameFiles/enemies/basic_enemy.tscn<>uid://br0mek24tjxjd::::res://gameFiles/player/player.tscn
+::res://gameFiles/scenes/scripts/::1716369470
 base_entity.gd::GDScript::-1::1716361164::0::1::::BaseEntity<>StaticBody2D<>::
+dev_scene.gd::GDScript::-1::1716369470::0::1::::<>Node2D<>::
 ::res://gameFiles/tilemaps/::1716361164
 tileMapTest.tscn::PackedScene::6636935340352429885::1716361164::0::1::::<><>::uid://bduhm8kljtvs1::::res://res/sprites/tilesets/tileset_test.png
 ::res://res/::1716361070

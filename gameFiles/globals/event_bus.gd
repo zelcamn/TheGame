@@ -16,3 +16,6 @@ signal damage_is_taken()
 
 signal enemy_is_dead()
 signal player_is_dead()
+
+signal battle_is_begin()
+signal open_world_is_begin()

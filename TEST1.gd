@@ -56,7 +56,8 @@ func _process(delta):
 	
 	if enemy_is_dead:
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://gameFiles/scenes/dev_scene.tscn")
+		#get_tree().change_scene_to_file("res://gameFiles/scenes/dev_scene.tscn")
+		EventBus.emit_signal("open_world_is_begin")
 		enemy_is_dead = false
 		
 	if player_is_dead:
