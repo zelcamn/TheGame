@@ -1,3 +1,5 @@
+Node2D
+Control
 Label
 Area2D
 Timer
@@ -11,5 +13,3 @@ TextureProgressBar
 ProgressBar
 ShaderGlobalsOverride
 CanvasModulate
-StaticBody2D
-VisibleOnScreenNotifier2D

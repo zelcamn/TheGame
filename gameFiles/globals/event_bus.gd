@@ -9,7 +9,8 @@ signal item_interact(item: Object)
 signal item_unequip(res: Resource)
 
 signal attack_is_pressed()
-signal turn_is_finished()
+signal player_turn_is_finished()
+signal mob_turn_is_finished()
 signal projectile_is_denied()
 signal damage_is_taken()
 
