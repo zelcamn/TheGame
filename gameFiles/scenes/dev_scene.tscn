@@ -43,3 +43,4 @@ patrolDistance = 500
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_cbxf1")]
 z_index = 3
 position = Vector2(292, 170)
+speed = 130
