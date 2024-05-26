@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv2qeior56nf"
-path="res://.godot/imported/set_player_hp.png-aa76c004b7c340a0594cda3cfb1d4ea5.ctex"
+uid="uid://ip2fd6vrnag6"
+path="res://.godot/imported/armor.png-a8dc5801daf4e92a3317aab5b62e8543.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/sprites/objects/set_player_hp.png"
-dest_files=["res://.godot/imported/set_player_hp.png-aa76c004b7c340a0594cda3cfb1d4ea5.ctex"]
+source_file="res://res/sprites/objects/armor.png"
+dest_files=["res://.godot/imported/armor.png-a8dc5801daf4e92a3317aab5b62e8543.ctex"]
 
 [params]
 

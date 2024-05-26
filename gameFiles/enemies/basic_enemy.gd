@@ -43,7 +43,7 @@ func _physics_process(delta):
 		pass
 		#destinationPoint = get_patrol_point()
 	#print(homePoint, destinationPoint, homePoint.distance_to(destinationPoint))
-	print( homePoint.distance_to(transform.origin + destinationPoint.normalized()), homePoint, destinationPoint)
+	#print( homePoint.distance_to(transform.origin + destinationPoint.normalized()), homePoint, destinationPoint)
 	if (moveDelta < 1 or isIdle == false) and homePoint.distance_to(transform.origin + destinationPoint.normalized() * 10) < patrolDistance:
 		travel(destinationPoint, delta)
 
@@ -62,7 +62,7 @@ func get_patrol_point() -> Vector2:
 			destination = ((homePoint + Vector2(0, randf() * patrolDistance) )* Vector2.UP.rotated(dirs.pick_random() * 45)).clamp(homePoint - Vector2(patrolDistance, patrolDistance), homePoint + Vector2(patrolDistance, patrolDistance))
 			params.set_from(transform.origin)
 			params.set_to(destination)
-			print(space.intersect_ray(params))
+			#print(space.intersect_ray(params))
 			if space.intersect_ray(params) == {}:
 				break
 	#params.set_from(transform.origin)

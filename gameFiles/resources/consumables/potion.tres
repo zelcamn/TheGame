@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="healingItem" load_steps=3 format=3 uid="uid://d10c2c2dh2x2s"]
+
+[ext_resource type="Script" path="res://gameFiles/player/systems/inventory/items/customResources/consumablesEffects/healing_item.gd" id="1_82dqg"]
+[ext_resource type="Texture2D" uid="uid://c3c865nnaly50" path="res://res/sprites/objects/potion.png" id="2_w2rmf"]
+
+[resource]
+script = ExtResource("1_82dqg")
+health_restored = 50
+name = "potion"
+texture = ExtResource("2_w2rmf")
+type = 0

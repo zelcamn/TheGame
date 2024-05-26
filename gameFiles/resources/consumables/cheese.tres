@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="healingItem" load_steps=3 format=3 uid="uid://bwjubexs7fped"]
+
+[ext_resource type="Script" path="res://gameFiles/player/systems/inventory/items/customResources/consumablesEffects/healing_item.gd" id="1_04g7m"]
+[ext_resource type="Texture2D" uid="uid://mrwe5frwvpoh" path="res://res/sprites/objects/cheese.png" id="2_5dss5"]
+
+[resource]
+script = ExtResource("1_04g7m")
+health_restored = 20
+name = "cheese"
+texture = ExtResource("2_5dss5")
+type = 0

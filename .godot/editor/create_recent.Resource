@@ -1,3 +1,7 @@
+Armor
+healingItem
+Weapon
+Consumable
 SetPlayerHP
 GetPlayerHP
 GetPlayerWeapon

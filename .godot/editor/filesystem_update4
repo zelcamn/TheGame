@@ -8,3 +8,13 @@ res://gameFiles/tilemaps/tileMapTest.tscn
 res://gameFiles/enemies/basic_enemy.tscn
 res://gameFiles/scenes/mainScene.tscn
 res://gameFiles/tilemaps/forestScene.tres
+res://gameFiles/resources/consumables/chesse.tres
+res://gameFiles/player/systems/inventory/items/customResources/consumablesEffects/healing_item.gd
+res://gameFiles/player/systems/inventory/items/baseResources/item.gd
+res://gameFiles/resources/consumables/cheese.tres
+res://gameFiles/resources/weapons/sword.tres
+res://gameFiles/resources/consumables/apple.tres
+res://gameFiles/resources/consumables/potion.tres
+res://gameFiles/player/systems/inventory/items/baseResources/armor.gd
+res://gameFiles/resources/armors/armor.tres
+res://gameFiles/enemies/basic_enemy.gd

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SetPlayerHP" load_steps=3 format=3 uid="uid://dnnhmygg3nae5"]
 
 [ext_resource type="Script" path="res://gameFiles/player/systems/inventory/items/customResources/test_effects/set_player_hp.gd" id="1_m8h3c"]
-[ext_resource type="Texture2D" uid="uid://cv2qeior56nf" path="res://res/sprites/objects/set_player_hp.png" id="2_mau8g"]
+[ext_resource type="Texture2D" uid="uid://cv2qeior56nf" path="res://res/sprites/objects/placeholders/set_player_hp.png" id="2_mau8g"]
 
 [resource]
 script = ExtResource("1_m8h3c")

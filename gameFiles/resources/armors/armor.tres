@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Armor" load_steps=3 format=3 uid="uid://duoyu4hasa5g3"]
+
+[ext_resource type="Script" path="res://gameFiles/player/systems/inventory/items/baseResources/armor.gd" id="1_r1bey"]
+[ext_resource type="Texture2D" uid="uid://ip2fd6vrnag6" path="res://res/sprites/objects/armor.png" id="2_1pgok"]
+
+[resource]
+script = ExtResource("1_r1bey")
+armorPoints = 15
+name = "armor"
+texture = ExtResource("2_1pgok")
+type = 2

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="healingItem" load_steps=3 format=3 uid="uid://dupf5knfndcdh"]
+
+[ext_resource type="Script" path="res://gameFiles/player/systems/inventory/items/customResources/consumablesEffects/healing_item.gd" id="1_f3v8x"]
+[ext_resource type="Texture2D" uid="uid://dwu8y7ax2e77s" path="res://res/sprites/objects/apple.png" id="2_hwixs"]
+
+[resource]
+script = ExtResource("1_f3v8x")
+health_restored = 15
+name = "apple"
+texture = ExtResource("2_hwixs")
+type = 0

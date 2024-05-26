@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6r4moafqedu1"
-path="res://.godot/imported/placeHolder3.png-175732294cf1bfc84b968ba1fceeef61.ctex"
+uid="uid://xa2yh0pk7t8n"
+path="res://.godot/imported/sheild.png-d635f8fbe15f5acf46aa9d8f6828db50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/sprites/objects/placeHolder3.png"
-dest_files=["res://.godot/imported/placeHolder3.png-175732294cf1bfc84b968ba1fceeef61.ctex"]
+source_file="res://res/sprites/objects/sheild.png"
+dest_files=["res://.godot/imported/sheild.png-d635f8fbe15f5acf46aa9d8f6828db50.ctex"]
 
 [params]
 

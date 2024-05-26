@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="GetPlayerWeapon" load_steps=3 format=3 uid="uid://b30sc7sf1vck1"]
 
 [ext_resource type="Script" path="res://gameFiles/player/systems/inventory/items/customResources/test_effects/get_player_weapon_test.gd" id="1_a50tl"]
-[ext_resource type="Texture2D" uid="uid://dh5eqas810g7x" path="res://res/sprites/objects/get_player_weapon.png" id="2_c7smh"]
+[ext_resource type="Texture2D" uid="uid://dh5eqas810g7x" path="res://res/sprites/objects/placeholders/get_player_weapon.png" id="2_c7smh"]
 
 [resource]
 script = ExtResource("1_a50tl")
