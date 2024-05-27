@@ -1,7 +1,7 @@
 extends Node
 class_name Inventory
 
-var weapon: Resource = null
+var weapon: Resource = preload("res://gameFiles/player/systems/inventory/items/customResources/weapons/base_wapon.tres")
 var armor: Resource = null
 
 var items: Dictionary

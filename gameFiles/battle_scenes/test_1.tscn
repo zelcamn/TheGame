@@ -1,0 +1,110 @@
+[gd_scene load_steps=16 format=3 uid="uid://taryb7hgjwyc"]
+
+[ext_resource type="Script" path="res://TEST1.gd" id="1_tbu3q"]
+[ext_resource type="Texture2D" uid="uid://bxn7low2b6ebs" path="res://res/sprites/battle/1678184377_bogatyr-club-p-pikselnaya-trava-foni-pinterest-16.png" id="3_5ib3w"]
+[ext_resource type="Texture2D" uid="uid://dagqbppf8if4e" path="res://res/sprites/battle/1.1.png" id="4_1tti0"]
+[ext_resource type="Texture2D" uid="uid://c1bqwgx0bg8ea" path="res://res/sprites/battle/1.2.png" id="5_mwuds"]
+[ext_resource type="Texture2D" uid="uid://diaieaa2ib5xx" path="res://res/sprites/battle/2.1.png" id="6_npnfp"]
+[ext_resource type="Texture2D" uid="uid://cm4c526libdkb" path="res://res/sprites/battle/2.2.png" id="7_7eokd"]
+[ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_buttons/Control.gd" id="7_froc4"]
+[ext_resource type="Texture2D" uid="uid://db5ktoaoghydu" path="res://res/sprites/battle/кнопка блока.png" id="7_yqq88"]
+[ext_resource type="Texture2D" uid="uid://bw3x57xtltthv" path="res://res/sprites/battle/4.1.png" id="8_c5w06"]
+[ext_resource type="Texture2D" uid="uid://dl8b0b50yxji5" path="res://res/sprites/battle/3.1.png" id="8_mrigc"]
+[ext_resource type="Texture2D" uid="uid://cypy4fvr4q87u" path="res://res/sprites/battle/3.2.png" id="9_c6q2w"]
+[ext_resource type="Texture2D" uid="uid://be2ajjmvl1pgt" path="res://res/sprites/battle/4.2.png" id="9_cx1v7"]
+[ext_resource type="PackedScene" uid="uid://cksm6dpaxtuxm" path="res://gameFiles/battle_scenes/arena.tscn" id="13_qh1ie"]
+[ext_resource type="PackedScene" uid="uid://7ikxaa1bj5qr" path="res://gameFiles/battle_scenes/slime_health_bar.tscn" id="15_mvf18"]
+[ext_resource type="PackedScene" uid="uid://bol6nf75c6pv8" path="res://gameFiles/battle_scenes/player_health_bar.tscn" id="16_715rf"]
+
+[node name="TEST1" type="Node2D"]
+script = ExtResource("1_tbu3q")
+
+[node name="Area2D" parent="." instance=ExtResource("13_qh1ie")]
+position = Vector2(960, 703)
+scale = Vector2(1.008, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(960, 540)
+texture = ExtResource("3_5ib3w")
+
+[node name="Control" type="Control" parent="." groups=["buttle_buttons"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_froc4")
+
+[node name="Attack x1" type="TextureButton" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 80.0
+offset_top = 500.0
+offset_right = 380.0
+offset_bottom = 650.0
+texture_normal = ExtResource("4_1tti0")
+texture_pressed = ExtResource("5_mwuds")
+texture_disabled = ExtResource("7_yqq88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Attack x3" type="TextureButton" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 80.0
+offset_top = 750.0
+offset_right = 380.0
+offset_bottom = 900.0
+texture_normal = ExtResource("6_npnfp")
+texture_pressed = ExtResource("7_7eokd")
+texture_disabled = ExtResource("7_yqq88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="defense" type="TextureButton" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1540.0
+offset_top = 500.0
+offset_right = 1840.0
+offset_bottom = 650.0
+scale = Vector2(1.01822, 1)
+texture_normal = ExtResource("8_mrigc")
+texture_pressed = ExtResource("9_c6q2w")
+texture_disabled = ExtResource("7_yqq88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="heal" type="TextureButton" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1540.0
+offset_top = 750.0
+offset_right = 1840.0
+offset_bottom = 900.0
+disabled = true
+texture_normal = ExtResource("8_c5w06")
+texture_pressed = ExtResource("9_cx1v7")
+texture_disabled = ExtResource("7_yqq88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Bars" type="Node2D" parent="."]
+
+[node name="slime_health_bar" parent="Bars" instance=ExtResource("15_mvf18")]
+texture_filter = 1
+position = Vector2(25, 925)
+scale = Vector2(1.2, 1.2)
+
+[node name="player_health_bar" parent="Bars" instance=ExtResource("16_715rf")]
+position = Vector2(1429.4, 922)
+scale = Vector2(1.2, 1.2)
+
+[connection signal="pressed" from="Control/Attack x1" to="." method="_on_attack_x1_pressed"]
+[connection signal="pressed" from="Control/Attack x3" to="." method="_on_attack_x_3_pressed"]
+[connection signal="pressed" from="Control/defense" to="." method="_on_defense_pressed"]
+[connection signal="pressed" from="Control/heal" to="." method="_on_heal_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

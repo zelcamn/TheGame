@@ -14,7 +14,11 @@ func _ready():
 	screenSize = get_viewport_rect().size
 	
 	health.maxHealth = GlobalInfo.playerHealth
-	health.health = GlobalInfo.playerHealth
+	if !GlobalInfo.current_player_health:
+		health.health = GlobalInfo.playerHealth
+		GlobalInfo.current_player_health = GlobalInfo.playerHealth
+	else:
+		health.health = GlobalInfo.current_player_health
 	
 
 

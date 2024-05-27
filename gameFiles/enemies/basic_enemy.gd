@@ -102,7 +102,10 @@ func travel(dest: Vector2, delta):
 		transform.origin = nextPoint
 
 func attack(body: Object):
-	print("attack!!!!")
+	GlobalInfo.reset_coldowns()
+		#GlobalInfo.current_player_health = GlobalInfo.get_player_hp()
+	#get_tree().change_scene_to_file("res://gameFiles/battle_scenes/test_1.tscn")
+	EventBus.emit_signal("battle_is_begin")
 	queue_free()
 
 func is_player_entered_detection(body):

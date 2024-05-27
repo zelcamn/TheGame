@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://im5ch1y0qcpm"]
+
+[ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/Slime_attack_scene.gd" id="1_xoelx"]
+[ext_resource type="PackedScene" uid="uid://cksm6dpaxtuxm" path="res://gameFiles/battle_scenes/arena.tscn" id="3_3ehq8"]
+[ext_resource type="Texture2D" uid="uid://bxn7low2b6ebs" path="res://res/sprites/battle/1678184377_bogatyr-club-p-pikselnaya-trava-foni-pinterest-16.png" id="3_ntj4o"]
+[ext_resource type="PackedScene" uid="uid://bol6nf75c6pv8" path="res://gameFiles/battle_scenes/player_health_bar.tscn" id="4_ldq6q"]
+[ext_resource type="PackedScene" uid="uid://7ikxaa1bj5qr" path="res://gameFiles/battle_scenes/slime_health_bar.tscn" id="4_pk1pp"]
+
+[node name="Slime_attack_scene" type="Node2D"]
+script = ExtResource("1_xoelx")
+
+[node name="Area2D" parent="." instance=ExtResource("3_3ehq8")]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(960, 703)
+scale = Vector2(1.008, 1)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.996354, 0.994444)
+texture = ExtResource("3_ntj4o")
+
+[node name="player_health_bar2" parent="." instance=ExtResource("4_ldq6q")]
+position = Vector2(1429.4, 922)
+scale = Vector2(1.2, 1.2)
+
+[node name="slime_health_bar2" parent="." instance=ExtResource("4_pk1pp")]
+texture_filter = 1
+position = Vector2(25, 925)
+scale = Vector2(1.2, 1.2)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

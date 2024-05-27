@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7ae82kihyk5w"]
+
+[ext_resource type="Script" path="res://scripts/heart.gd" id="1_mcwsf"]
+[ext_resource type="Texture2D" uid="uid://p4r2b3tekb2s" path="res://res/sprites/testSprites/heart.png" id="2_3crld"]
+[ext_resource type="PackedScene" uid="uid://h2gkpi2324v8" path="res://scenes/attack_component.tscn" id="3_78hp7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4x0xo"]
+radius = 70.0
+
+[node name="heart" type="CharacterBody2D" node_paths=PackedStringArray("hp")]
+script = ExtResource("1_mcwsf")
+hp = NodePath("attack_component")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.438333, 0.463311)
+texture = ExtResource("2_3crld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4x0xo")
+
+[node name="attack_component" parent="." instance=ExtResource("3_78hp7")]

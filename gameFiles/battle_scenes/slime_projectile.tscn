@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://db72sem40kfue"]
+
+[ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/slime_projectile.gd" id="1_xgw25"]
+[ext_resource type="Texture2D" uid="uid://bww7uv3h6rysd" path="res://res/sprites/battle/Slime-attack1.png" id="2_mbct4"]
+[ext_resource type="Texture2D" uid="uid://c4hex5ok3h06f" path="res://res/sprites/battle/Slime-attack2.png" id="3_bqtoq"]
+[ext_resource type="Texture2D" uid="uid://d21e10xtqc12" path="res://res/sprites/tempSprites/стрелка.png" id="5_xjo28"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4dp7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mbct4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bqtoq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdf10"]
+radius = 38.0
+height = 76.0
+
+[node name="slime_projectile" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(200, 200)
+scale = Vector2(0.5, 0.5)
+collision_layer = 5
+collision_mask = 5
+safe_margin = 0.001
+script = ExtResource("1_xgw25")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-1.00001, -2.5)
+scale = Vector2(2.72414, 3.66667)
+sprite_frames = SubResource("SpriteFrames_y4dp7")
+autoplay = "default"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-41.75, -3.99999)
+scale = Vector2(3.775, 3.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-42, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pdf10")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0.941176, 0, 0.196078, 0.784314)
+self_modulate = Color(1, 1, 1, 0.988235)
+texture_filter = 1
+position = Vector2(-150, -4)
+rotation = 3.14159
+scale = Vector2(0.111667, 0.1)
+texture = ExtResource("5_xjo28")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

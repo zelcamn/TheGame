@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://du0cd1ml3hsts"]
+
+[ext_resource type="PackedScene" uid="uid://b7ae82kihyk5w" path="res://gameFiles/battle_scenes/slime_core.tscn" id="1_fkeag"]
+[ext_resource type="Texture2D" uid="uid://ptp3eqw06jmy" path="res://res/sprites/battle/slime1.png" id="2_01i8r"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.752941)
+texture_filter = 1
+scale = Vector2(12, 12)
+texture = ExtResource("2_01i8r")
+
+[node name="slime_core" parent="." instance=ExtResource("1_fkeag")]
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.658824)
+texture_filter = 1
+scale = Vector2(12, 12)
+texture = ExtResource("2_01i8r")

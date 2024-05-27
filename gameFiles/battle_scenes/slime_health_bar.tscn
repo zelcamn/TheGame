@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://7ikxaa1bj5qr"]
+
+[ext_resource type="Script" path="res://gameFiles/battle_scenes/battle_scripts/slime_health_bar.gd" id="1_3bjyt"]
+[ext_resource type="Texture2D" uid="uid://l8601wo7yikj" path="res://res/sprites/battle/хп слайма задник.png" id="2_4tsf0"]
+[ext_resource type="Texture2D" uid="uid://d2owuobt7hhhm" path="res://res/sprites/battle/image_2024-05-21_18-26-00.png" id="3_4lcso"]
+[ext_resource type="Texture2D" uid="uid://b7voaklj82m7m" path="res://res/sprites/battle/image_2024-05-19_15-42-18 (1).png" id="3_138p3"]
+[ext_resource type="Texture2D" uid="uid://cqjrc0wngwh4a" path="res://res/sprites/battle/crystal.png" id="4_5oop1"]
+
+[node name="slime_health_bar" type="Node2D"]
+script = ExtResource("1_3bjyt")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_right = 97.0
+offset_bottom = 30.0
+scale = Vector2(4, 4)
+texture_under = ExtResource("2_4tsf0")
+texture_over = ExtResource("3_4lcso")
+texture_progress = ExtResource("3_138p3")
+texture_progress_offset = Vector2(25, 18)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.765259, 0.866163, 1, 1)
+position = Vector2(61, 57.75)
+scale = Vector2(0.97619, 0.851648)
+texture = ExtResource("4_5oop1")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 192.0
+offset_top = 68.0
+offset_right = 448.0
+offset_bottom = 872.0
+scale = Vector2(0.05, 0.05)
+theme_type_variation = &"HeaderMedium"
+theme_override_font_sizes/font_size = 590
+vertical_alignment = 1
