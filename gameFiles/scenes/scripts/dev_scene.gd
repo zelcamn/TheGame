@@ -3,7 +3,7 @@ extends Node2D
 var is_now_open_world : bool
 var is_now_battle : bool
 
-const open_world_scene = preload("res://gameFiles/scenes/open_world.tscn")
+const open_world_scene = preload("res://gameFiles/scenes/mainScene.tscn")
 const battle_scene = preload("res://gameFiles/battle_scenes/test_1.tscn")
 
 var open_world = open_world_scene.instantiate()
