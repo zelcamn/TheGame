@@ -1,25 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://qc80b4fgkij2"]
+[gd_scene load_steps=8 format=3 uid="uid://qc80b4fgkij2"]
 
 [ext_resource type="Script" path="res://gameFiles/enemies/basic_enemy.gd" id="1_4o6h3"]
-[ext_resource type="Texture2D" uid="uid://c6ij6v0xnclok" path="res://res/sprites/enemies/base_enemy_idle.png" id="2_8omht"]
-[ext_resource type="Texture2D" uid="uid://c3so3vtoephw2" path="res://res/sprites/enemies/base_enemy_pursue.png" id="3_a7gfy"]
+[ext_resource type="Texture2D" uid="uid://wa3mrydadsf5" path="res://res/sprites/player/anim3.png" id="2_2tkgf"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6j3ow"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds38n"]
+atlas = ExtResource("2_2tkgf")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x5xa"]
+atlas = ExtResource("2_2tkgf")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fo4t6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8omht")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
+"texture": SubResource("AtlasTexture_ds38n")
 }, {
-"frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_a7gfy")
+"texture": SubResource("AtlasTexture_3x5xa")
 }],
 "loop": true,
-"name": &"pursue",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -36,8 +38,9 @@ patrolDistance = 20
 speed = 100
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_6j3ow")
-animation = &"idle"
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_fo4t6")
+speed_scale = 0.5
 
 [node name="DetectCollisions" type="Area2D" parent="."]
 collision_layer = 0

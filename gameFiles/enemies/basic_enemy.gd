@@ -27,6 +27,8 @@ func _ready():
 	startPoint = transform.origin
 	player = get_tree().get_nodes_in_group("Player")[0]
 	homePoint = transform.origin
+	$Sprite2D.animation = "default"
+	$Sprite2D.play()
 
 func _physics_process(delta):
 	if moveDelta >= 1:

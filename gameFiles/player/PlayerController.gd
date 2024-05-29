@@ -4,6 +4,8 @@ extends CharacterBody2D
 var screenSize
 var health = Health.new()
 var inventory = Inventory.new()
+
+#var IsanimationChosen: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	EventBus.connect("item_interact", item_interact)
@@ -26,21 +28,35 @@ func _ready():
 func _physics_process(delta):
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("moveDown"):
+		#if not IsanimationChosen:
+		$PlayerSprite.animation = "down"
+		#IsanimationChosen = true
 		velocity.y += 1
-	if Input.is_action_pressed("moveUp"):
+	elif Input.is_action_pressed("moveUp"):
+		#if not IsanimationChosen:
+		$PlayerSprite.animation = "up"
+		#IsanimationChosen = true
 		velocity.y -= 1
-	if Input.is_action_pressed("moveLeft"):
+	elif Input.is_action_pressed("moveLeft"):
+		#if not IsanimationChosen:
+		$PlayerSprite.flip_h = false
+		$PlayerSprite.animation = "side"
+		#IsanimationChosen = true
 		velocity.x -= 1
-	if Input.is_action_pressed("moveRight"):
+	elif Input.is_action_pressed("moveRight"):
+		#if not IsanimationChosen:
+		$PlayerSprite.flip_h = true
+		$PlayerSprite.animation = "side"
+		#IsanimationChosen = true
 		velocity.x += 1
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$PlayerSprite.animation = "walk"
 		$PlayerSprite.play()
 	else:
-		$PlayerSprite.animation = "stop"
 		$PlayerSprite.stop()
+		$PlayerSprite.frame = 0
+		#IsanimationChosen = false
 	
 	move_and_slide()
 	#position += velocity * delta

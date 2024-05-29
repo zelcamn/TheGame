@@ -1,5 +1,8 @@
 res://gameFiles/scenes/mainScene.tscn
 res://gameFiles/scenes/scripts/base_entity.gd
 res://gameFiles/tilemaps/forestScene.tres
-res://gameFiles/scenes/scripts/dev_scene.gd
-res://gameFiles/scenes/dev_scene.tscn
+res://gameFiles/scenes/open_world.tscn
+res://gameFiles/player/player.tscn
+res://gameFiles/player/PlayerController.gd
+res://gameFiles/enemies/basic_enemy.tscn
+res://gameFiles/enemies/basic_enemy.gd
